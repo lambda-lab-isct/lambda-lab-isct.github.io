@@ -7,7 +7,6 @@ interface NewsItem {
   title: Record<Locale, string>;
   body: Record<Locale, string>;
   url?: string;
-  isPlaceholder: boolean;
 }
 
 interface Props {
@@ -18,16 +17,27 @@ interface Props {
 const { items, locale } = Astro.props;
 ---
 
-<ul class="list-plain">
-  {
-    items.map((item) => (
-      <li class="card">
-        <time datetime={item.date} class="meta">{item.date}</time>
-        <h3>{t(item.title, locale)}</h3>
-        <p>{t(item.body, locale)}</p>
-        {item.url && <a href={item.url}>{locale === "ja" ? "詳細" : "Details"}</a>}
-        {item.isPlaceholder && <p class="meta">{locale === "ja" ? "プレースホルダー" : "Placeholder"}</p>}
-      </li>
-    ))
-  }
-</ul>
+{
+  items.length === 0 ? (
+    <p class="meta">
+      {locale === "ja"
+        ? "現在掲載中のお知らせはありません。"
+        : "There are currently no announcements."}
+    </p>
+  ) : (
+    <ul class="list-plain">
+      {items.map((item) => (
+        <li class="card">
+          <time datetime={item.date} class="meta">
+            {item.date}
+          </time>
+          <h3>{t(item.title, locale)}</h3>
+          <p>{t(item.body, locale)}</p>
+          {item.url && (
+            <a href={item.url}>{locale === "ja" ? "詳細" : "Details"}</a>
+          )}
+        </li>
+      ))}
+    </ul>
+  )
+}

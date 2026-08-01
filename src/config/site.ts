@@ -4,8 +4,8 @@ export const siteConfig = {
     en: "Lambda Laboratory",
   },
   description: {
-    ja: "Lambda Laboratory の公式Webサイトです。研究、メンバー、研究業績、ニュース、教育、セミナー、WCTP、アクセス情報を掲載します。",
-    en: "Official website of Lambda Laboratory, providing research, members, publications, news, education, seminars, WCTP, and access information.",
+    ja: "Lambda Laboratoryでは、プログラミング言語理論、型システム、形式手法とその応用に関する研究を行っています。",
+    en: "The Lambda Laboratory conducts research on programming language theory, type systems, formal methods, and their applications.",
   },
   url: "https://lambda-lab-isct.github.io",
   repository: "https://github.com/lambda-lab-isct/lambda-lab-isct.github.io",
@@ -41,8 +41,8 @@ export const pages: Record<
     label: { ja: "ホーム", en: "Home" },
     title: { ja: "ホーム", en: "Home" },
     description: {
-      ja: "Lambda Laboratory の概要と最新情報を掲載します。",
-      en: "Overview and updates from Lambda Laboratory.",
+      ja: "Lambda Laboratoryの概要と研究情報を紹介します。",
+      en: "Overview and research information from Lambda Laboratory.",
     },
   },
   research: {
@@ -50,7 +50,7 @@ export const pages: Record<
     label: { ja: "研究", en: "Research" },
     title: { ja: "研究", en: "Research" },
     description: {
-      ja: "Lambda Laboratory の研究テーマを紹介します。",
+      ja: "Lambda Laboratoryの研究テーマを紹介します。",
       en: "Research themes at Lambda Laboratory.",
     },
   },
@@ -59,7 +59,7 @@ export const pages: Record<
     label: { ja: "メンバー", en: "Members" },
     title: { ja: "メンバー", en: "Members" },
     description: {
-      ja: "Lambda Laboratory のメンバー情報を掲載します。",
+      ja: "Lambda Laboratoryのメンバー情報を掲載します。",
       en: "Members of Lambda Laboratory.",
     },
   },
@@ -68,7 +68,7 @@ export const pages: Record<
     label: { ja: "研究業績", en: "Publications" },
     title: { ja: "研究業績", en: "Publications" },
     description: {
-      ja: "Lambda Laboratory の研究業績を分類して掲載します。",
+      ja: "Lambda Laboratoryの研究業績を分類して掲載します。",
       en: "Publication records from Lambda Laboratory.",
     },
   },
@@ -77,7 +77,7 @@ export const pages: Record<
     label: { ja: "ニュース", en: "News" },
     title: { ja: "ニュース", en: "News" },
     description: {
-      ja: "Lambda Laboratory のお知らせを掲載します。",
+      ja: "Lambda Laboratoryからのお知らせを掲載します。",
       en: "News from Lambda Laboratory.",
     },
   },
@@ -86,8 +86,8 @@ export const pages: Record<
     label: { ja: "教育", en: "Education" },
     title: { ja: "教育", en: "Education" },
     description: {
-      ja: "教育活動と学生向け情報を掲載します。",
-      en: "Education activities and information for students.",
+      ja: "Lambda Laboratoryの教育活動に関する情報を掲載します。",
+      en: "Information about educational activities at Lambda Laboratory.",
     },
   },
   seminars: {
@@ -95,8 +95,8 @@ export const pages: Record<
     label: { ja: "セミナー", en: "Seminars" },
     title: { ja: "セミナー", en: "Seminars" },
     description: {
-      ja: "セミナー情報を掲載します。",
-      en: "Seminar information.",
+      ja: "Lambda Laboratoryのセミナー情報を掲載します。",
+      en: "Seminar information from Lambda Laboratory.",
     },
   },
   wctp: {
@@ -104,8 +104,8 @@ export const pages: Record<
     label: { ja: "WCTP", en: "WCTP" },
     title: { ja: "WCTP", en: "WCTP" },
     description: {
-      ja: "WCTP 関連情報と過去サイトへの入口です。",
-      en: "Entry point for WCTP information and archived static sites.",
+      ja: "WCTPに関する情報を掲載します。",
+      en: "Information about WCTP.",
     },
   },
   access: {
@@ -113,8 +113,8 @@ export const pages: Record<
     label: { ja: "アクセス・連絡先", en: "Access and Contact" },
     title: { ja: "アクセス・連絡先", en: "Access and Contact" },
     description: {
-      ja: "アクセスと連絡先の未確定情報を掲載するページです。",
-      en: "Access and contact information placeholders.",
+      ja: "Lambda Laboratoryへのアクセスと連絡先を掲載します。",
+      en: "Access and contact information for Lambda Laboratory.",
     },
   },
 };

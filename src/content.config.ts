@@ -30,7 +30,6 @@ const research = defineCollection({
         }),
       )
       .default([]),
-    isPlaceholder: z.boolean().default(false),
     order: z.number().default(100),
   }),
 });
@@ -79,7 +78,6 @@ const members = defineCollection({
       )
       .default([]),
     url: z.url().optional(),
-    isPlaceholder: z.boolean().default(false),
     order: z.number().default(100),
   }),
 });
@@ -91,7 +89,6 @@ const news = defineCollection({
     title: localizedText,
     body: localizedText,
     url: z.url().optional(),
-    isPlaceholder: z.boolean().default(true),
   }),
 });
 
@@ -104,7 +101,6 @@ const seminars = defineCollection({
     venue: localizedText,
     abstract: localizedText.optional(),
     url: z.url().optional(),
-    isPlaceholder: z.boolean().default(true),
   }),
 });
 

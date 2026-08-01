@@ -1,6 +1,5 @@
 ---
 import PageHero from "@/components/PageHero.astro";
-import PlaceholderNote from "@/components/PlaceholderNote.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { pages } from "@/config/site";
 
@@ -8,13 +7,16 @@ const locale = "ja";
 const page = pages.education;
 ---
 
-<BaseLayout locale={locale} page="education" title={page.title.ja} description={page.description.ja}>
+<BaseLayout
+  locale={locale}
+  page="education"
+  title={page.title.ja}
+  description={page.description.ja}
+>
   <PageHero title={page.title.ja} description={page.description.ja} />
   <section class="section">
     <div class="container">
-      <PlaceholderNote locale={locale} />
-      <h2>教育活動</h2>
-      <p>授業、研究指導、学生募集に関する正式情報は未提供です。確認済み情報を受け取り次第、掲載します。</p>
+      <p>教育活動に関する情報は、内容を確認のうえ順次掲載します。</p>
     </div>
   </section>
 </BaseLayout>

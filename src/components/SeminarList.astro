@@ -8,7 +8,6 @@ interface Seminar {
   speaker: Record<Locale, string>;
   venue: Record<Locale, string>;
   abstract?: Record<Locale, string>;
-  isPlaceholder: boolean;
 }
 
 interface Props {
@@ -19,21 +18,32 @@ interface Props {
 const { seminars, locale } = Astro.props;
 ---
 
-<ul class="list-plain">
-  {
-    seminars.map((seminar) => (
-      <li class="card">
-        <time datetime={seminar.date} class="meta">{seminar.date}</time>
-        <h3>{t(seminar.title, locale)}</h3>
-        <p>
-          <strong>{locale === "ja" ? "講演者:" : "Speaker:"}</strong> {t(seminar.speaker, locale)}
-        </p>
-        <p>
-          <strong>{locale === "ja" ? "会場:" : "Venue:"}</strong> {t(seminar.venue, locale)}
-        </p>
-        {seminar.abstract && <p>{t(seminar.abstract, locale)}</p>}
-        {seminar.isPlaceholder && <p class="meta">{locale === "ja" ? "プレースホルダー" : "Placeholder"}</p>}
-      </li>
-    ))
-  }
-</ul>
+{
+  seminars.length === 0 ? (
+    <p class="meta">
+      {locale === "ja"
+        ? "現在掲載中のセミナー情報はありません。"
+        : "There are currently no seminar announcements."}
+    </p>
+  ) : (
+    <ul class="list-plain">
+      {seminars.map((seminar) => (
+        <li class="card">
+          <time datetime={seminar.date} class="meta">
+            {seminar.date}
+          </time>
+          <h3>{t(seminar.title, locale)}</h3>
+          <p>
+            <strong>{locale === "ja" ? "講演者:" : "Speaker:"}</strong>{" "}
+            {t(seminar.speaker, locale)}
+          </p>
+          <p>
+            <strong>{locale === "ja" ? "会場:" : "Venue:"}</strong>{" "}
+            {t(seminar.venue, locale)}
+          </p>
+          {seminar.abstract && <p>{t(seminar.abstract, locale)}</p>}
+        </li>
+      ))}
+    </ul>
+  )
+}

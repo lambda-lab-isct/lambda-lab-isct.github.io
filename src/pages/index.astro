@@ -11,13 +11,19 @@ const research = byOrder(await getDataCollection("research"));
 const news = byDateDesc(await getDataCollection("news"));
 ---
 
-<BaseLayout locale={locale} page="home" title={pages.home.title.ja} description={siteConfig.description.ja}>
+<BaseLayout
+  locale={locale}
+  page="home"
+  title={pages.home.title.ja}
+  description={siteConfig.description.ja}
+>
   <PageHero title="Lambda Laboratory" description={siteConfig.description.ja} />
   <section class="section">
     <div class="container">
-      <h2>このサイトについて</h2>
+      <h2>概要</h2>
       <p>
-        Lambda Laboratory の公式Webサイト初期版です。正式な研究内容、メンバー、連絡先、研究業績は、確認済み情報の提供後に掲載します。
+        Lambda
+        Laboratoryでは、プログラミング言語理論、型システム、形式手法とその応用に関する研究を行っています。本サイトでは、研究テーマ、メンバー、研究業績などを紹介します。
       </p>
     </div>
   </section>
@@ -27,10 +33,14 @@ const news = byDateDesc(await getDataCollection("news"));
       <ResearchList items={research} locale={locale} />
     </div>
   </section>
-  <section class="section">
-    <div class="container">
-      <h2>ニュース</h2>
-      <NewsList items={news.slice(0, 3)} locale={locale} />
-    </div>
-  </section>
+  {
+    news.length > 0 && (
+      <section class="section">
+        <div class="container">
+          <h2>ニュース</h2>
+          <NewsList items={news.slice(0, 3)} locale={locale} />
+        </div>
+      </section>
+    )
+  }
 </BaseLayout>

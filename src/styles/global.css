@@ -188,17 +188,9 @@ main {
   line-height: 1.35;
 }
 
-.meta,
-.placeholder-note {
+.meta {
   color: var(--color-muted);
   font-size: 0.94rem;
-}
-
-.placeholder-note {
-  border-left: 4px solid #8aa8c5;
-  margin: 1rem 0;
-  padding: 0.7rem 1rem;
-  background: var(--color-soft);
 }
 
 .list-plain {
