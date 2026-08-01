@@ -35,9 +35,7 @@ const { items, locale } = Astro.props;
           ))}
         {item.representativePublications.length > 0 && (
           <>
-            <h3>
-              {locale === "ja" ? "代表論文" : "Representative Publications"}
-            </h3>
+            <h3>{locale === "ja" ? "関連研究" : "Related Research"}</h3>
             <ul class="list-plain">
               {item.representativePublications.map((publication) => (
                 <li>

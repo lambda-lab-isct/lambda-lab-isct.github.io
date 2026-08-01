@@ -58,4 +58,4 @@ lint を追加した場合は lint も実行する。
 - `record_status` が `unresolved` または `non_publication` の記録は、ユーザー確認なしに公開しない。
 - `private-source/` の内容をログ、最終報告、PR本文へ全文転載しない。
 - 公開用研究業績JSONを生成するときは `npm run import:publications` を使い、内部管理フィールドと除外対象 `record_status` が含まれていないことを確認する。
-- 公開ページに反映する前に、日英ページの同期、代表論文IDの整合性、秘密情報の混入がないことを検証する。
+- 公開ページに反映する前に、日英ページの同期、関連研究として参照する publication_id の整合性、秘密情報の混入がないことを検証する。
