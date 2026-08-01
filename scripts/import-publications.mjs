@@ -144,6 +144,36 @@ function normalizeTitle(value) {
     .trim();
 }
 
+function normalizeSelectionText(value) {
+  return `${value ?? ""}`
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[^\p{Letter}\p{Number}]+/gu, "")
+    .trim();
+}
+
+function normalizeEvidenceText(value) {
+  return `${value ?? ""}`.normalize("NFKC").toLowerCase();
+}
+
+function publicationSelectionEvidence(record) {
+  return normalizeEvidenceText(
+    [
+      record.publisher,
+      record.journal_or_proceedings_title,
+      record.conference_name,
+      record.conference_acronym,
+      record.series_title,
+      record.doi,
+      record.url,
+      record.open_access_url,
+      record.repository_url,
+      record.isbn,
+      record.issn,
+    ].join(" | "),
+  );
+}
+
 function publicationCategory(row) {
   const type = row.publication_type.toLowerCase();
   const venue = [
@@ -382,6 +412,7 @@ function loadPublicationOverrides(filePath) {
       excludedPublicationIds: new Map(),
       canonicalPublicationIds: new Set(),
       retainedSimilarPublicationPairs: new Set(),
+      publicationSelectionPolicy: null,
     };
   }
 
@@ -412,6 +443,135 @@ function loadPublicationOverrides(filePath) {
         [...item.publicationIds].sort().join("::"),
       ),
     ),
+    publicationSelectionPolicy: config.publicationSelectionPolicy ?? null,
+  };
+}
+
+function matchConfiguredPublication(record, configuredPublication) {
+  if (configuredPublication.publicationId === record.publication_id) {
+    return true;
+  }
+
+  if (!configuredPublication.title) {
+    return false;
+  }
+
+  return (
+    normalizeSelectionText(configuredPublication.title) ===
+    normalizeSelectionText(record.title)
+  );
+}
+
+function findSelectionEvidenceMatch(evidence, configuredEntries) {
+  for (const entry of configuredEntries ?? []) {
+    const matchedNeedle = (entry.needles ?? []).find((needle) =>
+      evidence.includes(normalizeEvidenceText(needle)),
+    );
+
+    if (matchedNeedle) {
+      return {
+        name: entry.name,
+        matchedNeedle,
+        reason: entry.reason,
+      };
+    }
+  }
+
+  return null;
+}
+
+function selectPublicationForPublicList(record, selectionPolicy) {
+  if (!selectionPolicy) {
+    return {
+      included: true,
+      reason: "selection_policy_not_configured",
+    };
+  }
+
+  const mandatoryExclusion = (selectionPolicy.mandatoryExclusions ?? []).find(
+    (item) => matchConfiguredPublication(record, item),
+  );
+  if (mandatoryExclusion) {
+    return {
+      included: false,
+      reason: "mandatory_preface_exclusion",
+      selection_rule: "mandatory_exclusion",
+      detail: mandatoryExclusion.reason,
+    };
+  }
+
+  const mandatoryInclusion = (selectionPolicy.mandatoryInclusions ?? []).find(
+    (item) => matchConfiguredPublication(record, item),
+  );
+  if (mandatoryInclusion) {
+    return {
+      included: true,
+      reason: "mandatory_japanese_exception",
+      selection_rule: "mandatory_inclusion",
+      publisher_group: "Mandatory Japanese exception",
+      detail: mandatoryInclusion.reason,
+    };
+  }
+
+  const evidence = publicationSelectionEvidence(record);
+  const disallowedPublisher = findSelectionEvidenceMatch(
+    evidence,
+    selectionPolicy.disallowedPublishers,
+  );
+  if (disallowedPublisher) {
+    return {
+      included: false,
+      reason:
+        disallowedPublisher.name === "ACTA Press"
+          ? "disallowed_acta_press"
+          : "disallowed_iasted",
+      selection_rule: "disallowed_publisher",
+      publisher_group: disallowedPublisher.name,
+      matched_evidence: disallowedPublisher.matchedNeedle,
+      detail: disallowedPublisher.reason,
+    };
+  }
+
+  const allowedPublisher = findSelectionEvidenceMatch(
+    evidence,
+    selectionPolicy.allowedPublishers,
+  );
+  if (allowedPublisher) {
+    return {
+      included: true,
+      reason: "allowed_publisher",
+      selection_rule: "allowed_publisher",
+      publisher_group: allowedPublisher.name,
+      matched_evidence: allowedPublisher.matchedNeedle,
+    };
+  }
+
+  if ((record.publisher ?? "").trim()) {
+    return {
+      included: false,
+      reason: "not_allowed_publisher",
+      selection_rule: "publisher_not_allowed",
+      publisher_group: record.publisher,
+    };
+  }
+
+  return {
+    included: false,
+    reason: "publisher_unconfirmed",
+    selection_rule: "publisher_unconfirmed",
+  };
+}
+
+function exclusionReportItem(record, selection, extra = {}) {
+  return {
+    publication_id: record.publication_id,
+    publication_year: record.publication_year,
+    title: record.title,
+    reason: selection.reason,
+    selection_rule: selection.selection_rule,
+    publisher_group: selection.publisher_group,
+    matched_evidence: selection.matched_evidence,
+    ...extra,
   };
 }
 
@@ -424,6 +584,10 @@ const titleYearKeys = new Map();
 const duplicateCandidates = [];
 const excluded = [];
 const records = [];
+const selectionReport = {
+  included: [],
+  excluded: [],
+};
 
 function publicationYearValue(row) {
   return `${row.publication_year ?? ""}`.trim();
@@ -526,7 +690,25 @@ for (const row of rows) {
   publicationIds.add(row.publication_id);
 
   const publicRecord = cleanPublicRecord(row);
+  const selection = selectPublicationForPublicList(
+    publicRecord,
+    publicationOverrides.publicationSelectionPolicy,
+  );
+  if (!selection.included) {
+    excluded.push(exclusionReportItem(publicRecord, selection));
+    selectionReport.excluded.push(exclusionReportItem(publicRecord, selection));
+    continue;
+  }
+
   trackDuplicateCandidates(publicRecord);
+  selectionReport.included.push({
+    publication_id: publicRecord.publication_id,
+    publication_year: publicRecord.publication_year,
+    title: publicRecord.title,
+    reason: selection.reason,
+    publisher_group: selection.publisher_group,
+    matched_evidence: selection.matched_evidence,
+  });
   records.push(publicRecord);
 }
 
@@ -559,7 +741,25 @@ for (const record of bibtexRecords) {
     continue;
   }
   publicationIds.add(record.publication_id);
+  const selection = selectPublicationForPublicList(
+    record,
+    publicationOverrides.publicationSelectionPolicy,
+  );
+  if (!selection.included) {
+    excluded.push(exclusionReportItem(record, selection));
+    selectionReport.excluded.push(exclusionReportItem(record, selection));
+    continue;
+  }
+
   trackDuplicateCandidates(record);
+  selectionReport.included.push({
+    publication_id: record.publication_id,
+    publication_year: record.publication_year,
+    title: record.title,
+    reason: selection.reason,
+    publisher_group: selection.publisher_group,
+    matched_evidence: selection.matched_evidence,
+  });
   records.push(record);
 }
 
@@ -588,6 +788,28 @@ const output = {
       canonical_publications: publicationOverrides.canonicalPublicationIds.size,
       retained_similar_publication_pairs:
         publicationOverrides.retainedSimilarPublicationPairs.size,
+    },
+    publication_selection: {
+      policy_priority:
+        publicationOverrides.publicationSelectionPolicy?.priority ?? [],
+      included_by_publisher: selectionReport.included.reduce(
+        (summary, item) => {
+          const key = item.publisher_group ?? item.reason;
+          summary[key] = (summary[key] ?? 0) + 1;
+          return summary;
+        },
+        {},
+      ),
+      excluded_by_reason: selectionReport.excluded.reduce((summary, item) => {
+        summary[item.reason] = (summary[item.reason] ?? 0) + 1;
+        return summary;
+      }, {}),
+      mandatory_inclusions: selectionReport.included.filter(
+        (item) => item.reason === "mandatory_japanese_exception",
+      ),
+      mandatory_exclusions: selectionReport.excluded.filter(
+        (item) => item.reason === "mandatory_preface_exclusion",
+      ),
     },
     excluded_record_summary: excluded.reduce((summary, item) => {
       summary[item.reason] = (summary[item.reason] ?? 0) + 1;

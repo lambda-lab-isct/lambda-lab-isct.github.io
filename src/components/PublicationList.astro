@@ -7,7 +7,6 @@ interface Publication {
   title_english?: string;
   authors: string;
   authors_romanized?: string;
-  category: string;
   publication_year: number;
   publication_date?: string;
   publication_type?: string;
@@ -35,13 +34,6 @@ interface Props {
 }
 
 const { publications, locale } = Astro.props;
-const categories = [
-  ["journal", { ja: "学術論文", en: "Journal Articles" }],
-  ["conference", { ja: "国際会議・会議論文", en: "Conference Papers" }],
-  ["book", { ja: "書籍・分担執筆", en: "Books and Book Chapters" }],
-  ["workshop", { ja: "ワークショップ論文", en: "Workshop Papers" }],
-  ["other", { ja: "その他の研究業績", en: "Other Publications" }],
-] as const;
 
 function displayTitle(publication: Publication) {
   return locale === "en" && publication.title_english
@@ -72,53 +64,49 @@ function venueParts(publication: Publication) {
 }
 ---
 
-{
-  categories.map(([category, label]) => {
-    const grouped = publications.filter((publication) => publication.category === category);
-    return (
-      <section class="section">
-        <h2>{label[locale]}</h2>
-        {grouped.length === 0 ? (
-          <p class="meta">{locale === "ja" ? "公開中の業績はありません。" : "No public entries."}</p>
-        ) : (
-          <ol class="publication-list">
-            {grouped.map((publication) => (
-              <li class="publication-item" id={publication.publication_id}>
-                <article>
-                  <p class="meta">{publication.publication_year}</p>
-                  <h3>{displayTitle(publication)}</h3>
-                  <p>{displayAuthors(publication)}</p>
-                  {venueParts(publication).length > 0 && (
-                    <p class="meta">{venueParts(publication).join(", ")}</p>
-                  )}
-                  <p class="publication-links">
-                    {publication.doi && publication.doi_url && (
-                      <a href={publication.doi_url}>DOI: {publication.doi}</a>
-                    )}
-                    {publication.url && <a href={publication.url}>URL</a>}
-                    {publication.open_access_url && (
-                      <a href={publication.open_access_url}>
-                        {locale === "ja" ? "オープンアクセス" : "Open access"}
-                      </a>
-                    )}
-                    {publication.repository_url && (
-                      <a href={publication.repository_url}>
-                        {locale === "ja" ? "リポジトリ" : "Repository"}
-                      </a>
-                    )}
-                  </p>
-                  {publication.abstract && (
-                    <details>
-                      <summary>{locale === "ja" ? "概要" : "Abstract"}</summary>
-                      <p>{publication.abstract}</p>
-                    </details>
-                  )}
-                </article>
-              </li>
-            ))}
-          </ol>
-        )}
-      </section>
-    );
-  })
-}
+<section class="section">
+  {
+    publications.length === 0 ? (
+      <p class="meta">
+        {locale === "ja" ? "公開中の業績はありません。" : "No public entries."}
+      </p>
+    ) : (
+      <ol class="publication-list">
+        {publications.map((publication) => (
+          <li class="publication-item" id={publication.publication_id}>
+            <article>
+              <p class="meta">{publication.publication_year}</p>
+              <h2>{displayTitle(publication)}</h2>
+              <p>{displayAuthors(publication)}</p>
+              {venueParts(publication).length > 0 && (
+                <p class="meta">{venueParts(publication).join(", ")}</p>
+              )}
+              <p class="publication-links">
+                {publication.doi && publication.doi_url && (
+                  <a href={publication.doi_url}>DOI: {publication.doi}</a>
+                )}
+                {publication.url && <a href={publication.url}>URL</a>}
+                {publication.open_access_url && (
+                  <a href={publication.open_access_url}>
+                    {locale === "ja" ? "オープンアクセス" : "Open access"}
+                  </a>
+                )}
+                {publication.repository_url && (
+                  <a href={publication.repository_url}>
+                    {locale === "ja" ? "リポジトリ" : "Repository"}
+                  </a>
+                )}
+              </p>
+              {publication.abstract && (
+                <details>
+                  <summary>{locale === "ja" ? "概要" : "Abstract"}</summary>
+                  <p>{publication.abstract}</p>
+                </details>
+              )}
+            </article>
+          </li>
+        ))}
+      </ol>
+    )
+  }
+</section>
