@@ -7,7 +7,7 @@ export const siteConfig = {
     ja: "Lambda Laboratoryでは、プログラミング言語理論、型システム、形式手法とその応用に関する研究を行っています。",
     en: "The Lambda Laboratory conducts research on programming language theory, type systems, formal methods, and their applications.",
   },
-  url: "https://lambda-lab-isct.github.io",
+  url: "https://www.lambda.comp.isct.ac.jp",
   repository: "https://github.com/lambda-lab-isct/lambda-lab-isct.github.io",
   futureUrl: "https://www.lambda.comp.isct.ac.jp/",
   defaultLocale: "ja",
