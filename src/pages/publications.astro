@@ -18,9 +18,7 @@ const publications = publicationsData.records;
 >
   <PageHero title={page.title.ja} description={page.description.ja} />
   <div class="container">
-    <p class="meta">
-      提供された公開用データに基づき、研究業績を分類して掲載しています。
-    </p>
+    <p>研究業績のうち、主要な論文を選んで掲載しています。</p>
     <PublicationList publications={publications} locale={locale} />
   </div>
 </BaseLayout>

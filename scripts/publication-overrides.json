@@ -27,5 +27,103 @@
       "publicationIds": ["Hagiya1995LambdaPhageINBS", "Shimada1995LambdaPhage"],
       "reason": "Retain both lambda phage records because the authorship, publication types, venues, and pages differ: an INBS 1995 conference paper, pages 92-99; and a journal article in International Journal on Artificial Intelligence Tools, pages 511-523, DOI 10.1142/S0218213095000267."
     }
-  ]
+  ],
+  "publicationSelectionPolicy": {
+    "priority": [
+      "1. Mandatory exclusion: Preface to Hagiya-sensei's 26-th Birthday Special Issue is excluded because it is not treated as a scholarly paper for the public publication list.",
+      "2. Mandatory inclusion: the two specified Japanese publications are included regardless of publisher-based selection.",
+      "3. Disallowed publishers: ACTA Press and IASTED-related records are excluded.",
+      "4. Allowed publishers and scholarly societies are included when publisher, venue, series, DOI, or URL evidence clearly matches.",
+      "5. Records without enough publisher evidence are excluded from the public publication list."
+    ],
+    "mandatoryExclusions": [
+      {
+        "publicationId": "Nishizaki2022PrefaceHagiya",
+        "title": "Preface to Hagiya-sensei's 26-th Birthday Special Issue",
+        "reason": "Not treated as a scholarly paper for the public publication list, even though the source identifies Springer-related publication metadata."
+      }
+    ],
+    "mandatoryInclusions": [
+      {
+        "publicationId": "Nishizaki2015LogicComputation",
+        "title": "論理と計算のしくみと私",
+        "reason": "User-specified Japanese publication that must remain listed."
+      },
+      {
+        "publicationId": "Tomioka2006TypedPiCalculus",
+        "title": "通信プロトコルにおけるサービス不能攻撃耐性のための型付π計算",
+        "reason": "User-specified Japanese publication that must remain listed."
+      }
+    ],
+    "disallowedPublishers": [
+      {
+        "name": "ACTA Press",
+        "needles": ["ACTA Press"],
+        "reason": "ACTA Press-related records are excluded by user policy."
+      },
+      {
+        "name": "IASTED",
+        "needles": [
+          "IASTED",
+          "International Association of Science and Technology for Development"
+        ],
+        "reason": "IASTED-related records are excluded by user policy."
+      }
+    ],
+    "allowedPublishers": [
+      {
+        "name": "Association for Computing Machinery",
+        "needles": [
+          "ACM",
+          "Association for Computing Machinery",
+          "dl.acm.org",
+          "10.1145/"
+        ]
+      },
+      {
+        "name": "IEEE",
+        "needles": ["IEEE", "ieeexplore.ieee.org", "10.1109/"]
+      },
+      {
+        "name": "Springer/Springer Nature",
+        "needles": [
+          "Springer",
+          "Springer Nature",
+          "Atlantis Press / Springer Nature",
+          "10.1007/",
+          "10.2991/"
+        ]
+      },
+      {
+        "name": "World Scientific",
+        "needles": ["World Scientific", "10.1142/"]
+      },
+      {
+        "name": "Elsevier",
+        "needles": ["Elsevier", "10.1016/"]
+      },
+      {
+        "name": "Japan Society for Software Science and Technology",
+        "needles": [
+          "Japan Society for Software Science and Technology",
+          "日本ソフトウェア科学会",
+          "JSSST",
+          "10.11309/"
+        ]
+      },
+      {
+        "name": "Research Institute for Mathematical Sciences",
+        "needles": [
+          "Research Institute for Mathematical Sciences",
+          "京都大学数理解析研究所",
+          "rims.kyoto-u.ac.jp",
+          "RIMS"
+        ]
+      },
+      {
+        "name": "Kluwer Academic Publishers",
+        "needles": ["Kluwer Academic Publishers", "Kluwer", "10.1023/"]
+      }
+    ]
+  }
 }
