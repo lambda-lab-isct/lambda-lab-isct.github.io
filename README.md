@@ -16,7 +16,7 @@ News、Seminars、Education、WCTP は実データが揃うまで主要ナビゲ
 - GitHub Pages で公開可能な構成
 - 外部CMS、外部データベース、サーバーサイド処理は不使用
 
-将来の正式URLは `https://www.lambda.comp.isct.ac.jp/` です。独自ドメインはまだ有効化しません。
+公開サイトURLは `https://www.lambda.comp.isct.ac.jp/` です。GitHub Pages の Custom domain 設定と DNS 設定は、コード変更とは別に行います。
 
 ## 必要な Node.js バージョン
 
