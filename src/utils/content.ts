@@ -1,7 +1,6 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 
-type CollectionName =
-  "research" | "members" | "publications" | "news" | "seminars";
+type CollectionName = "research" | "members" | "news" | "seminars";
 
 export async function getDataCollection<K extends CollectionName>(
   collection: K,

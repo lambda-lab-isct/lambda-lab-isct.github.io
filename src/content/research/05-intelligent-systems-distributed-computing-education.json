@@ -1,0 +1,35 @@
+{
+  "id": "intelligent-systems-distributed-computing-education",
+  "title": {
+    "ja": "知的システム、分散計算、情報工学教育への応用",
+    "en": "Applications to Intelligent Systems, Distributed Computing, and Computing Education"
+  },
+  "body": {
+    "ja": "計算機科学の理論を、知的システムや教育、実用的なソフトウェアへ展開する研究です。人工知能では、知識表現と数値計算を組み合わせ、生命現象の複雑な制御を説明可能な形でシミュレーションしました。分散計算では、ブログなど既存のWeb基盤を計算資源として利用する方式や、オンライン証明・判定システムを研究しています。また、利用者の課題を出発点とするPBL型教育を通じ、要求分析、チーム形成、国際協働、システム開発を一体的に学ぶ情報工学教育を実践しています。",
+    "en": "This theme applies theoretical computer science to intelligent systems, education, and practical software. In artificial intelligence, the research combines knowledge representation with numerical computation to simulate complex biological regulation in an explainable form. In distributed computing, it explores methods that use existing Web infrastructure, such as blogs, as computational resources, as well as online proof and decision systems. It also develops project-based computing education that begins with real user needs and integrates requirements analysis, team building, international collaboration, and system development."
+  },
+  "representativePublicationIds": [
+    "Morimoto2018ITStudentProject",
+    "Sasajima2012BlogDistributed",
+    "Hagiya1995LambdaPhageINBS"
+  ],
+  "representativePublications": [
+    {
+      "title": "IT student project based learning based on user oriented approach: A practical oversea collaboration workshop",
+      "url": "https://doi.org/10.1145/3290511.3290532",
+      "publicationIds": ["Morimoto2018ITStudentProject"]
+    },
+    {
+      "title": "Blog-Based Distributed Computation",
+      "url": "https://doi.org/10.1007/978-3-642-34062-8_60",
+      "publicationIds": ["Sasajima2012BlogDistributed"]
+    },
+    {
+      "title": "Knowledge-based simulation of regulatory action in lambda phage",
+      "url": "https://ieeexplore.ieee.org/",
+      "publicationIds": ["Hagiya1995LambdaPhageINBS"]
+    }
+  ],
+  "isPlaceholder": false,
+  "order": 5
+}

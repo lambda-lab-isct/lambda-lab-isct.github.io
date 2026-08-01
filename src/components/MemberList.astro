@@ -2,12 +2,28 @@
 import type { Locale } from "@/config/site";
 import { t } from "@/utils/i18n";
 
+interface TimelineItem {
+  date: Record<Locale, string>;
+  text: Record<Locale, string>;
+  note?: Partial<Record<Locale, string>>;
+}
+
+interface Award {
+  date: Record<Locale, string>;
+  title: Record<Locale, string>;
+}
+
 interface Member {
   name: Record<Locale, string>;
   role: Record<Locale, string>;
   category: "faculty" | "staff" | "students" | "alumni" | "collaborators";
-  affiliation?: Partial<Record<Locale, string>>;
-  isPlaceholder: boolean;
+  affiliations: Record<Locale, string>[];
+  degree?: Partial<Record<Locale, string>>;
+  email?: string;
+  address?: Partial<Record<Locale, string>>;
+  education: TimelineItem[];
+  career: TimelineItem[];
+  awards: Award[];
 }
 
 interface Props {
@@ -17,13 +33,19 @@ interface Props {
 
 const { members, locale } = Astro.props;
 const labels = {
-  faculty: { ja: "Faculty", en: "Faculty" },
-  staff: { ja: "Staff", en: "Staff" },
-  students: { ja: "Students", en: "Students" },
-  alumni: { ja: "Alumni", en: "Alumni" },
-  collaborators: { ja: "Collaborators", en: "Collaborators" }
+  faculty: { ja: "教員", en: "Faculty" },
+  staff: { ja: "スタッフ", en: "Staff" },
+  students: { ja: "学生", en: "Students" },
+  alumni: { ja: "卒業生・修了生", en: "Alumni" },
+  collaborators: { ja: "共同研究者", en: "Collaborators" },
 } as const;
-const categories = ["faculty", "staff", "students", "alumni", "collaborators"] as const;
+const categories = [
+  "faculty",
+  "staff",
+  "students",
+  "alumni",
+  "collaborators",
+] as const;
 ---
 
 {
@@ -33,16 +55,91 @@ const categories = ["faculty", "staff", "students", "alumni", "collaborators"] a
       <section class="section">
         <h2>{labels[category][locale]}</h2>
         {grouped.length === 0 ? (
-          <p class="meta">{locale === "ja" ? "登録情報はまだありません。" : "No entries yet."}</p>
+          <p class="meta">
+            {locale === "ja" ? "公開中の情報はまだありません。" : "No public entries yet."}
+          </p>
         ) : (
-          <div class="grid">
+          <div class="profile-list">
             {grouped.map((member) => (
-              <article class="card">
-                <h3>{t(member.name, locale)}</h3>
-                <p>{t(member.role, locale)}</p>
-                {member.affiliation?.[locale] && <p class="meta">{member.affiliation[locale]}</p>}
-                {member.isPlaceholder && (
-                  <p class="meta">{locale === "ja" ? "プレースホルダー" : "Placeholder"}</p>
+              <article class="profile">
+                <header>
+                  <h3>{t(member.name, locale)}</h3>
+                  <p>{t(member.role, locale)}</p>
+                </header>
+
+                <dl class="definition-list">
+                  {member.affiliations.length > 0 && (
+                    <>
+                      <dt>{locale === "ja" ? "所属・職名" : "Position and Affiliations"}</dt>
+                      <dd>
+                        <ul>
+                          {member.affiliations.map((affiliation) => (
+                            <li>{t(affiliation, locale)}</li>
+                          ))}
+                        </ul>
+                      </dd>
+                    </>
+                  )}
+                  {member.degree?.[locale] && (
+                    <>
+                      <dt>{locale === "ja" ? "学位" : "Degree"}</dt>
+                      <dd>{member.degree[locale]}</dd>
+                    </>
+                  )}
+                  {member.email && (
+                    <>
+                      <dt>{locale === "ja" ? "メール" : "Email"}</dt>
+                      <dd>
+                        <a href={`mailto:${member.email}`}>{member.email}</a>
+                      </dd>
+                    </>
+                  )}
+                  {member.address?.[locale] && (
+                    <>
+                      <dt>{locale === "ja" ? "勤務先住所" : "Address"}</dt>
+                      <dd>{member.address[locale]}</dd>
+                    </>
+                  )}
+                </dl>
+
+                <div class="profile-columns">
+                  <section>
+                    <h4>{locale === "ja" ? "学歴" : "Education"}</h4>
+                    <ol class="timeline">
+                      {member.education.map((item) => (
+                        <li>
+                          <span>{t(item.date, locale)}</span>
+                          {t(item.text, locale)}
+                        </li>
+                      ))}
+                    </ol>
+                  </section>
+                  <section>
+                    <h4>{locale === "ja" ? "職歴" : "Career"}</h4>
+                    <ol class="timeline">
+                      {member.career.map((item) => (
+                        <li>
+                          <span>{t(item.date, locale)}</span>
+                          {t(item.text, locale)}
+                          {item.note?.[locale] && <em>{item.note[locale]}</em>}
+                        </li>
+                      ))}
+                    </ol>
+                  </section>
+                </div>
+
+                {member.awards.length > 0 && (
+                  <section>
+                    <h4>{locale === "ja" ? "受賞歴" : "Awards"}</h4>
+                    <ol class="timeline">
+                      {member.awards.map((award) => (
+                        <li>
+                          <span>{t(award.date, locale)}</span>
+                          {t(award.title, locale)}
+                        </li>
+                      ))}
+                    </ol>
+                  </section>
                 )}
               </article>
             ))}

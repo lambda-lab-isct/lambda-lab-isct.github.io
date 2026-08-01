@@ -45,3 +45,17 @@ git status
 lint を追加した場合は lint も実行する。
 
 主要ページと内部リンク、`sitemap.xml`、`robots.txt`、`404.html`、`/wctp/`、`/en/` 配下を確認する。秘密情報らしい文字列が混入していないことも確認する。
+
+## 非公開原資料
+
+- `private-source/` 以下は非公開原資料であり、Gitへ追加しない。
+- `private-source/` 内のファイルを `public/` や公開ページへそのままコピーしない。
+- 履歴書PDFをGitHubへ追加しない。
+- 自宅住所、郵便番号、個人電話番号、生年月日、年齢、性別を公開しない。
+- 顔写真は、本人から明示的な公開許可が出るまで公開しない。
+- 原資料に記載された情報でも、Webサイト掲載用として明示的に承認されていない個人情報は公開しない。
+- CSVの `verification_notes`、`notes`、`source_row_number` などの内部管理情報は公開ページに掲載しない。
+- `record_status` が `unresolved` または `non_publication` の記録は、ユーザー確認なしに公開しない。
+- `private-source/` の内容をログ、最終報告、PR本文へ全文転載しない。
+- 公開用研究業績JSONを生成するときは `npm run import:publications` を使い、内部管理フィールドと除外対象 `record_status` が含まれていないことを確認する。
+- 公開ページに反映する前に、日英ページの同期、代表論文IDの整合性、秘密情報の混入がないことを検証する。

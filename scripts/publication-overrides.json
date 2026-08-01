@@ -1,0 +1,31 @@
+{
+  "excludedPublications": [
+    {
+      "excludePublicationId": "Shibayama2002AnZenMail",
+      "canonicalPublicationId": "Shibayama2003AnZenMail",
+      "reason": "Duplicate AnZenMail record. The title, authors, DOI, and pages are identical. The conference was ISSS 2002, while Springer LNCS volume 2609 was published in 2003; the publication list uses the 2003 publication-year record as canonical.",
+      "doi": "10.1007/3-540-36532-X_13",
+      "conferenceName": "ISSS 2002",
+      "conferenceYear": 2002,
+      "publicationYear": 2003
+    },
+    {
+      "excludePublicationId": "Ikeda2008bSpiceBroadcast",
+      "canonicalPublicationId": "Ikeda2008aSpiceBroadcast",
+      "reason": "Duplicate SPiCE broadcast record. The authors and publication year are the same, the normalized title is the same, and both records refer to the same 5th Symposium on Science and Technology of System Verification. The canonical a-record has pages 89-95; the b-record has no page information and is treated as a proceedings-title variant."
+    }
+  ],
+  "retainedSimilarPublications": [
+    {
+      "publicationIds": [
+        "Sasajima2012BlogDistributed",
+        "Sasajima2012BlogDistributedComputation"
+      ],
+      "reason": "Retain both Blog-Based Distributed Computation records because the publication types, venues, and pages differ: a conference paper in Information Computing and Applications, pages 461-467, DOI 10.1007/978-3-642-34062-8_60; and a journal article in International Journal of Advancements in Computing Technology, pages 354-361."
+    },
+    {
+      "publicationIds": ["Hagiya1995LambdaPhageINBS", "Shimada1995LambdaPhage"],
+      "reason": "Retain both lambda phage records because the authorship, publication types, venues, and pages differ: an INBS 1995 conference paper, pages 92-99; and a journal article in International Journal on Artificial Intelligence Tools, pages 511-523, DOI 10.1142/S0218213095000267."
+    }
+  ]
+}

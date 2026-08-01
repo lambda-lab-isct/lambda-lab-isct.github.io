@@ -17,10 +17,20 @@ const optionalLocalizedText = z
 const research = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/content/research" }),
   schema: z.object({
+    id: z.string(),
     title: localizedText,
-    summary: localizedText,
-    tags: z.array(localizedText).default([]),
-    isPlaceholder: z.boolean().default(true),
+    body: localizedText,
+    representativePublicationIds: z.array(z.string()).default([]),
+    representativePublications: z
+      .array(
+        z.object({
+          title: z.string(),
+          url: z.string().optional(),
+          publicationIds: z.array(z.string()).default([]),
+        }),
+      )
+      .default([]),
+    isPlaceholder: z.boolean().default(false),
     order: z.number().default(100),
   }),
 });
@@ -28,6 +38,7 @@ const research = defineCollection({
 const members = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/content/members" }),
   schema: z.object({
+    id: z.string(),
     name: localizedText,
     role: localizedText,
     category: z.enum([
@@ -38,25 +49,38 @@ const members = defineCollection({
       "collaborators",
     ]),
     affiliation: optionalLocalizedText,
+    affiliations: z.array(localizedText).default([]),
+    degree: optionalLocalizedText,
     email: z.email().optional(),
+    address: optionalLocalizedText,
+    education: z
+      .array(
+        z.object({
+          date: localizedText,
+          text: localizedText,
+        }),
+      )
+      .default([]),
+    career: z
+      .array(
+        z.object({
+          date: localizedText,
+          text: localizedText,
+          note: optionalLocalizedText,
+        }),
+      )
+      .default([]),
+    awards: z
+      .array(
+        z.object({
+          date: localizedText,
+          title: localizedText,
+        }),
+      )
+      .default([]),
     url: z.url().optional(),
-    isPlaceholder: z.boolean().default(true),
+    isPlaceholder: z.boolean().default(false),
     order: z.number().default(100),
-  }),
-});
-
-const publications = defineCollection({
-  loader: glob({ pattern: "**/*.json", base: "./src/content/publications" }),
-  schema: z.object({
-    title: localizedText,
-    authors: z.array(z.string()),
-    category: z.enum(["journal", "conference", "book", "workshop", "other"]),
-    year: z.number().int(),
-    venue: optionalLocalizedText,
-    doi: z.string().optional(),
-    url: z.url().optional(),
-    note: optionalLocalizedText,
-    isPlaceholder: z.boolean().default(true),
   }),
 });
 
@@ -87,7 +111,6 @@ const seminars = defineCollection({
 export const collections = {
   research,
   members,
-  publications,
   news,
   seminars,
 };

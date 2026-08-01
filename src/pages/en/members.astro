@@ -1,7 +1,6 @@
 ---
 import MemberList from "@/components/MemberList.astro";
 import PageHero from "@/components/PageHero.astro";
-import PlaceholderNote from "@/components/PlaceholderNote.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { pages } from "@/config/site";
 import { byOrder, getDataCollection } from "@/utils/content";
@@ -14,7 +13,6 @@ const members = byOrder(await getDataCollection("members"));
 <BaseLayout locale={locale} page="members" title={page.title.en} description={page.description.en}>
   <PageHero title={page.title.en} description={page.description.en} />
   <div class="container">
-    <PlaceholderNote locale={locale} />
     <MemberList members={members} locale={locale} />
   </div>
 </BaseLayout>

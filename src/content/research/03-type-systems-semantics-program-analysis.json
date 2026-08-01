@@ -1,0 +1,46 @@
+{
+  "id": "type-systems-semantics-program-analysis",
+  "title": {
+    "ja": "型システム、意味論、プログラム解析",
+    "en": "Type Systems, Semantics, and Program Analysis"
+  },
+  "body": {
+    "ja": "プログラムが期待どおりに動くことを、実行前に数学的に確かめる研究です。型システムは、単なるデータ型の検査だけでなく、関数の利用方法、制御の流れ、実行時に満たすべき条件まで表現できます。本研究では、多相型、線形型、漸進的型付け、詳細化型、効果システムなどを用いて、プログラムの安全性や性質を静的に保証する方法を検討しています。また、大ステップ意味論と小ステップ意味論、抽象機械、プログラム変換の関係を明らかにし、理論と実装を結び付けています。",
+    "en": "This research aims to verify mathematically, before execution, that programs behave as intended. Type systems can express not only ordinary data types, but also how functions may be used, how control flows, and which conditions must hold at run time. The work investigates polymorphic types, linear types, gradual typing, refinement types, and effect systems as methods for statically guaranteeing program safety and other properties. It also studies the relationships among big-step semantics, small-step semantics, abstract machines, and program transformations, connecting theoretical models with practical implementations."
+  },
+  "representativePublicationIds": [
+    "Ishii2020StaticCode",
+    "Hiwatashi2018InverseComputation",
+    "Nishizaki2013EnvironmentCalculus",
+    "Narita2011RPCAbstractMachine",
+    "Nishizaki1998GraphSearch"
+  ],
+  "representativePublications": [
+    {
+      "title": "Static Code Analysis Using Refinement Types based on Design by Contract",
+      "url": "https://doi.org/10.1145/3384544.3384587",
+      "publicationIds": ["Ishii2020StaticCode"]
+    },
+    {
+      "title": "Inverse Computation with an SMT Solver",
+      "url": "https://ieeexplore.ieee.org/document/8537531/",
+      "publicationIds": ["Hiwatashi2018InverseComputation"]
+    },
+    {
+      "title": "Evaluation Strategy and Translation of Environment Calculus",
+      "url": "https://doi.org/10.1007/978-3-642-53932-9_23",
+      "publicationIds": ["Nishizaki2013EnvironmentCalculus"]
+    },
+    {
+      "title": "A Parallel Abstract Machine for the RPC Calculus",
+      "publicationIds": ["Narita2011RPCAbstractMachine"]
+    },
+    {
+      "title": "Formalization of Graph Search Algorithm and Its Applications",
+      "url": "https://doi.org/10.1007/bfb0055153",
+      "publicationIds": ["Nishizaki1998GraphSearch"]
+    }
+  ],
+  "isPlaceholder": false,
+  "order": 3
+}

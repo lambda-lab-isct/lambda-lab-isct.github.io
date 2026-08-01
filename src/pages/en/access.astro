@@ -1,22 +1,24 @@
 ---
 import PageHero from "@/components/PageHero.astro";
-import PlaceholderNote from "@/components/PlaceholderNote.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { pages } from "@/config/site";
+import { getDataCollection } from "@/utils/content";
 
 const locale = "en";
 const page = pages.access;
+const [profile] = await getDataCollection("members");
 ---
 
 <BaseLayout locale={locale} page="access" title={page.title.en} description={page.description.en}>
   <PageHero title={page.title.en} description={page.description.en} />
   <section class="section">
     <div class="container">
-      <PlaceholderNote locale={locale} />
       <h2>Access</h2>
-      <p>Address, building, and laboratory location details have not been provided yet. Publish only verified information.</p>
+      <p>{profile.address?.en}</p>
       <h2>Contact</h2>
-      <p>General email address, phone number, and contact workflow have not been provided yet. Confirm publication permission before adding personal information.</p>
+      <p>
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      </p>
     </div>
   </section>
 </BaseLayout>

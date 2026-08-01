@@ -1,5 +1,5 @@
 {
-  "name": "lambda-lab-website",
+  "name": "lambda-lab-isct.github.io",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -8,6 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "import:publications": "node scripts/import-publications.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

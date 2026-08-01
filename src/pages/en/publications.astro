@@ -1,20 +1,27 @@
 ---
 import PageHero from "@/components/PageHero.astro";
-import PlaceholderNote from "@/components/PlaceholderNote.astro";
 import PublicationList from "@/components/PublicationList.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { pages } from "@/config/site";
-import { getDataCollection } from "@/utils/content";
+import publicationsData from "@/data/publications.json";
 
 const locale = "en";
 const page = pages.publications;
-const publications = await getDataCollection("publications");
+const publications = publicationsData.records;
 ---
 
-<BaseLayout locale={locale} page="publications" title={page.title.en} description={page.description.en}>
+<BaseLayout
+  locale={locale}
+  page="publications"
+  title={page.title.en}
+  description={page.description.en}
+>
   <PageHero title={page.title.en} description={page.description.en} />
   <div class="container">
-    <PlaceholderNote locale={locale} />
+    <p class="meta">
+      This page lists publications based on public data provided for the
+      laboratory website.
+    </p>
     <PublicationList publications={publications} locale={locale} />
   </div>
 </BaseLayout>

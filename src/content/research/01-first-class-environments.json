@@ -1,0 +1,52 @@
+{
+  "id": "first-class-environments",
+  "title": {
+    "ja": "ファーストクラス環境と環境計算",
+    "en": "First-Class Environments and Environment Calculi"
+  },
+  "body": {
+    "ja": "通常のプログラミング言語では、変数と値の対応を表す「環境」は処理系の内部に隠されています。この研究では、環境そのものをプログラム中の値として生成・受け渡し・合成できる「ファーストクラス環境」を理論化しました。ラムダ計算を拡張して、変数参照、環境の更新、関数適用を明確な簡約規則で表し、型安全性、型推論、合流性、評価戦略などを研究しています。動的なソフトウェア更新、モジュール、レコード、明示的代入などを統一的に理解する基礎にもなります。",
+    "en": "In ordinary programming languages, an environment, which associates variables with values, is usually hidden inside the implementation. This research develops a theory of first-class environments, where environments themselves can be created, passed, and composed as program values. By extending the lambda calculus, the work gives explicit reduction rules for variable lookup, environment update, and function application, and studies type safety, type inference, confluence, and evaluation strategies. These ideas also provide a common foundation for understanding dynamic software evolution, modules, records, and explicit substitutions."
+  },
+  "representativePublicationIds": [
+    "Nishizaki2021UntypedEnvironments",
+    "Nishizaki2014FirstOrderUnification",
+    "Nishizaki2013StrongReduction",
+    "Nishizaki2000DynamicSoftwareEvolution",
+    "Nishizaki1994MLEnvironments",
+    "Nishizaki1994SimplyTypedEnvironments"
+  ],
+  "representativePublications": [
+    {
+      "title": "Untyped lambda calculus with functionally referable environments",
+      "url": "https://doi.org/10.1145/3457784.3457798",
+      "publicationIds": ["Nishizaki2021UntypedEnvironments"]
+    },
+    {
+      "title": "Incorporating First-order Unification into Functional Language via First-class Environments",
+      "url": "https://doi.org/10.1007/978-3-319-11629-7_3",
+      "publicationIds": ["Nishizaki2014FirstOrderUnification"]
+    },
+    {
+      "title": "Strong Reduction for Typed Lambda Calculus with First-Class Environments",
+      "url": "https://doi.org/10.1007/978-3-642-34062-8_82",
+      "publicationIds": ["Nishizaki2013StrongReduction"]
+    },
+    {
+      "title": "Programmable Environment Calculus as Theory of Dynamic Software Evolution",
+      "url": "https://ieeexplore.ieee.org/",
+      "publicationIds": ["Nishizaki2000DynamicSoftwareEvolution"]
+    },
+    {
+      "title": "ML with First-class Environments and Type Inference Algorithm",
+      "url": "https://doi.org/10.1007/bfb0032396",
+      "publicationIds": ["Nishizaki1994MLEnvironments"]
+    },
+    {
+      "title": "Simply Typed Lambda Calculus with First-class Environments",
+      "publicationIds": ["Nishizaki1994SimplyTypedEnvironments"]
+    }
+  ],
+  "isPlaceholder": false,
+  "order": 1
+}

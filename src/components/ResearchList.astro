@@ -2,11 +2,16 @@
 import type { Locale } from "@/config/site";
 import { t } from "@/utils/i18n";
 
+interface RepresentativePublication {
+  title: string;
+  url?: string;
+  publicationIds: string[];
+}
+
 interface Item {
   title: Record<Locale, string>;
-  summary: Record<Locale, string>;
-  tags: Record<Locale, string>[];
-  isPlaceholder: boolean;
+  body: Record<Locale, string>;
+  representativePublications: RepresentativePublication[];
 }
 
 interface Props {
@@ -17,17 +22,34 @@ interface Props {
 const { items, locale } = Astro.props;
 ---
 
-<div class="grid">
+<div class="topic-list">
   {
     items.map((item) => (
-      <article class="card">
-        <h3>{t(item.title, locale)}</h3>
-        <p>{t(item.summary, locale)}</p>
-        {item.tags.length > 0 && (
-          <p class="meta">
-            {item.tags.map((tag) => t(tag, locale)).join(" / ")}
-            {item.isPlaceholder ? ` - ${locale === "ja" ? "プレースホルダー" : "Placeholder"}` : ""}
-          </p>
+      <article class="research-topic">
+        <h2>{t(item.title, locale)}</h2>
+        {t(item.body, locale)
+          .split(/\n{2,}/)
+          .filter(Boolean)
+          .map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        {item.representativePublications.length > 0 && (
+          <>
+            <h3>
+              {locale === "ja" ? "代表論文" : "Representative Publications"}
+            </h3>
+            <ul class="list-plain">
+              {item.representativePublications.map((publication) => (
+                <li>
+                  {publication.url ? (
+                    <a href={publication.url}>{publication.title}</a>
+                  ) : (
+                    publication.title
+                  )}
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </article>
     ))

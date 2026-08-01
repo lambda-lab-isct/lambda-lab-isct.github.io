@@ -70,9 +70,19 @@ lint は現時点では構成していません。必要になった時点で、
 
 メンバー分類は `faculty`, `staff`, `students`, `alumni`, `collaborators` を扱えます。
 
+研究業績は `src/data/publications.json` で公開用データとして管理します。このJSONは `private-source/publications/abstract.csv` と `private-source/publications/recent-publications-2022-2026.bib` から生成しますが、原資料CSVとBibTeXはGitへ追加しません。
+
+```powershell
+npm run import:publications
+```
+
+CSV変換時には `record_status=verified` と `record_status=partially_verified` のみを公開候補として取り込みます。`record_status=unresolved` と `record_status=non_publication` は除外します。BibTeX由来のレコードは `record_status=user_provided_bibtex` として取り込みます。`verification_notes`、`notes`、`source_row_number` などの内部管理情報は公開用JSONへ含めません。
+
 研究業績分類は `journal`, `conference`, `book`, `workshop`, `other` を扱えます。DOI、URL、著者、タイトル、出版年、掲載先、注記を必要に応じて保持できます。
 
 実在する情報を追加するときは、公開許可と表記を確認してください。推測で人物、住所、連絡先、研究業績を追加してはいけません。
+
+新しい研究業績データが追加提供された場合は、同じ公開可否ルールでCSV、BibTeX、または変換スクリプトを更新し、`npm run import:publications`、`npm run check`、`npm run build` を実行してから反映してください。重複や正規レコードの扱いは `scripts/publication-overrides.json` に監査可能な理由つきで記録します。
 
 ## 日本語版と英語版
 
@@ -140,3 +150,5 @@ GitHub Pages の設定画面で Source を GitHub Actions にする必要があ�
 秘密情報、APIキー、認証トークン、非公開メールアドレス、非公開電話番号、個人住所、未承認の個人情報をコミットしないでください。
 
 公開前に `git diff`、生成ファイル、Markdown、JSON を確認し、秘密情報らしい文字列が混入していないことを確認してください。
+
+`private-source/` は非公開原資料置き場であり、Git管理外です。履歴書PDF、原資料CSV、研究テーマ原稿などをそのまま `public/` や公開ページへコピーしてはいけません。独自ドメイン設定とDNS設定はまだ行いません。

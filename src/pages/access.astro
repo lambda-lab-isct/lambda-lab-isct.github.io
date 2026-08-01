@@ -1,22 +1,24 @@
 ---
 import PageHero from "@/components/PageHero.astro";
-import PlaceholderNote from "@/components/PlaceholderNote.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { pages } from "@/config/site";
+import { getDataCollection } from "@/utils/content";
 
 const locale = "ja";
 const page = pages.access;
+const [profile] = await getDataCollection("members");
 ---
 
 <BaseLayout locale={locale} page="access" title={page.title.ja} description={page.description.ja}>
   <PageHero title={page.title.ja} description={page.description.ja} />
   <section class="section">
     <div class="container">
-      <PlaceholderNote locale={locale} />
       <h2>アクセス</h2>
-      <p>住所、建物名、研究室所在地は未提供です。確認済み情報のみ掲載してください。</p>
+      <p>{profile.address?.ja}</p>
       <h2>連絡先</h2>
-      <p>代表メールアドレス、電話番号、問い合わせ方法は未提供です。個人情報を掲載する前に公開可否を確認してください。</p>
+      <p>
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      </p>
     </div>
   </section>
 </BaseLayout>
