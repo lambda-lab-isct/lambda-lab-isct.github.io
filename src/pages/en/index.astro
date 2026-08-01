@@ -1,14 +1,12 @@
 ---
-import NewsList from "@/components/NewsList.astro";
 import PageHero from "@/components/PageHero.astro";
 import ResearchList from "@/components/ResearchList.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { pages, siteConfig } from "@/config/site";
-import { byDateDesc, byOrder, getDataCollection } from "@/utils/content";
+import { byOrder, getDataCollection } from "@/utils/content";
 
 const locale = "en";
 const research = byOrder(await getDataCollection("research"));
-const news = byDateDesc(await getDataCollection("news"));
 ---
 
 <BaseLayout
@@ -26,6 +24,11 @@ const news = byDateDesc(await getDataCollection("news"));
         type systems, formal methods, and their applications. This website
         introduces our research themes, members, and publications.
       </p>
+      <ul class="list-plain">
+        <li><a href={pages.research.path[locale]}>View research themes</a></li>
+        <li><a href={pages.members.path[locale]}>View members</a></li>
+        <li><a href={pages.publications.path[locale]}>View publications</a></li>
+      </ul>
     </div>
   </section>
   <section class="section">
@@ -34,14 +37,4 @@ const news = byDateDesc(await getDataCollection("news"));
       <ResearchList items={research} locale={locale} />
     </div>
   </section>
-  {
-    news.length > 0 && (
-      <section class="section">
-        <div class="container">
-          <h2>News</h2>
-          <NewsList items={news.slice(0, 3)} locale={locale} />
-        </div>
-      </section>
-    )
-  }
 </BaseLayout>

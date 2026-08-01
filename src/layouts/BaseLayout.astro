@@ -1,6 +1,12 @@
 ---
 import "@/styles/global.css";
-import { pages, siteConfig, type Locale, type PageKey } from "@/config/site";
+import {
+  navigationPages,
+  pages,
+  siteConfig,
+  type Locale,
+  type PageKey,
+} from "@/config/site";
 import { alternateLocale, getCanonicalUrl, t } from "@/utils/i18n";
 
 interface Props {
@@ -8,9 +14,10 @@ interface Props {
   page: PageKey;
   title: string;
   description: string;
+  robots?: string;
 }
 
-const { locale, page, title, description } = Astro.props;
+const { locale, page, title, description, robots } = Astro.props;
 const canonicalUrl = getCanonicalUrl(pages[page].path[locale]);
 const otherLocale = alternateLocale(locale);
 const otherPath = pages[page].path[otherLocale];
@@ -26,6 +33,7 @@ const langLabel = locale === "ja" ? "English" : "日本語";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="ja" href={getCanonicalUrl(pages[page].path.ja)} />
     <link rel="alternate" hreflang="en" href={getCanonicalUrl(pages[page].path.en)} />
@@ -53,7 +61,9 @@ const langLabel = locale === "ja" ? "English" : "日本語";
         <nav aria-label={locale === "ja" ? "主要ナビゲーション" : "Primary navigation"}>
           <ul class="nav-list">
             {
-              Object.entries(pages).map(([key, item]) => (
+              navigationPages.map((key) => {
+                const item = pages[key];
+                return (
                 <li>
                   <a
                     href={item.path[locale]}
@@ -62,7 +72,8 @@ const langLabel = locale === "ja" ? "English" : "日本語";
                     {t(item.label, locale)}
                   </a>
                 </li>
-              ))
+                );
+              })
             }
           </ul>
         </nav>

@@ -27,6 +27,23 @@ export type PageKey =
   | "wctp"
   | "access";
 
+export const navigationPages: PageKey[] = [
+  "home",
+  "research",
+  "members",
+  "publications",
+  "access",
+];
+
+export const sitemapPages: PageKey[] = navigationPages;
+
+export const deferredPages: PageKey[] = [
+  "news",
+  "education",
+  "seminars",
+  "wctp",
+];
+
 export const pages: Record<
   PageKey,
   {

@@ -15,6 +15,7 @@ const news = byDateDesc(await getDataCollection("news"));
   page="news"
   title={page.title.ja}
   description={page.description.ja}
+  robots="noindex, follow"
 >
   <PageHero title={page.title.ja} description={page.description.ja} />
   <section class="section">

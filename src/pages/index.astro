@@ -1,14 +1,12 @@
 ---
-import NewsList from "@/components/NewsList.astro";
 import PageHero from "@/components/PageHero.astro";
 import ResearchList from "@/components/ResearchList.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { pages, siteConfig } from "@/config/site";
-import { byDateDesc, byOrder, getDataCollection } from "@/utils/content";
+import { byOrder, getDataCollection } from "@/utils/content";
 
 const locale = "ja";
 const research = byOrder(await getDataCollection("research"));
-const news = byDateDesc(await getDataCollection("news"));
 ---
 
 <BaseLayout
@@ -25,6 +23,11 @@ const news = byDateDesc(await getDataCollection("news"));
         Lambda
         Laboratoryでは、プログラミング言語理論、型システム、形式手法とその応用に関する研究を行っています。本サイトでは、研究テーマ、メンバー、研究業績などを紹介します。
       </p>
+      <ul class="list-plain">
+        <li><a href={pages.research.path[locale]}>研究テーマを見る</a></li>
+        <li><a href={pages.members.path[locale]}>メンバーを見る</a></li>
+        <li><a href={pages.publications.path[locale]}>研究業績を見る</a></li>
+      </ul>
     </div>
   </section>
   <section class="section">
@@ -33,14 +36,4 @@ const news = byDateDesc(await getDataCollection("news"));
       <ResearchList items={research} locale={locale} />
     </div>
   </section>
-  {
-    news.length > 0 && (
-      <section class="section">
-        <div class="container">
-          <h2>ニュース</h2>
-          <NewsList items={news.slice(0, 3)} locale={locale} />
-        </div>
-      </section>
-    )
-  }
 </BaseLayout>

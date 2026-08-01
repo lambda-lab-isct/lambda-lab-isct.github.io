@@ -1,9 +1,9 @@
-import { pages, siteConfig } from "@/config/site";
+import { pages, siteConfig, sitemapPages } from "@/config/site";
 
 export function GET() {
-  const urls = Object.values(pages).flatMap((page) =>
+  const urls = sitemapPages.flatMap((pageKey) =>
     siteConfig.locales.map((locale) =>
-      new URL(page.path[locale], siteConfig.url).toString(),
+      new URL(pages[pageKey].path[locale], siteConfig.url).toString(),
     ),
   );
 

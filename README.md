@@ -4,6 +4,8 @@ Lambda Laboratory の公式Webサイトです。研究室の研究内容、メ�
 
 公開ページには、Webサイト掲載用として承認された情報のみを掲載します。News、Seminars、Education、WCTP は、公開可能な内容を確認できたものから順次追加します。
 
+News、Seminars、Education、WCTP は実データが揃うまで主要ナビゲーションと `sitemap.xml` から外し、各ページには `noindex, follow` を設定します。実データ追加後は、対象ページをナビゲーションへ戻し、`noindex` を解除し、`sitemap.xml` に戻してください。
+
 ## 技術構成
 
 - Astro
