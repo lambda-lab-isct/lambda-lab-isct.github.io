@@ -1,0 +1,24 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/config/site";
+import { getDataCollection } from "@/utils/content";
+
+const locale = "ja";
+const page = pages.access;
+const [profile] = await getDataCollection("members");
+---
+
+<BaseLayout locale={locale} page="access" title={page.title.ja} description={page.description.ja}>
+  <PageHero title={page.title.ja} description={page.description.ja} />
+  <section class="section">
+    <div class="container">
+      <h2>アクセス</h2>
+      <p>{profile.address?.ja}</p>
+      <h2>連絡先</h2>
+      <p>
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,101 @@
+---
+import "@/styles/global.css";
+import {
+  navigationPages,
+  pages,
+  siteConfig,
+  type Locale,
+  type PageKey,
+} from "@/config/site";
+import { alternateLocale, getCanonicalUrl, t } from "@/utils/i18n";
+
+interface Props {
+  locale: Locale;
+  page: PageKey;
+  title: string;
+  description: string;
+  robots?: string;
+}
+
+const { locale, page, title, description, robots } = Astro.props;
+const canonicalUrl = getCanonicalUrl(pages[page].path[locale]);
+const otherLocale = alternateLocale(locale);
+const otherPath = pages[page].path[otherLocale];
+const fullTitle =
+  page === "home" ? siteConfig.name[locale] : `${title} | ${siteConfig.name[locale]}`;
+const langLabel = locale === "ja" ? "English" : "日本語";
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="ja" href={getCanonicalUrl(pages[page].path.ja)} />
+    <link rel="alternate" hreflang="en" href={getCanonicalUrl(pages[page].path.en)} />
+    <link rel="alternate" hreflang="x-default" href={getCanonicalUrl(pages[page].path.ja)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.name[locale]} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">
+      {locale === "ja" ? "本文へ移動" : "Skip to main content"}
+    </a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href={pages.home.path[locale]}>
+          <span class="brand-name">{siteConfig.name[locale]}</span>
+          <span class="brand-note">
+            {locale === "ja"
+              ? "Institute of Science Tokyo の研究室サイト"
+              : "An independent laboratory website at Institute of Science Tokyo"}
+          </span>
+        </a>
+        <nav aria-label={locale === "ja" ? "主要ナビゲーション" : "Primary navigation"}>
+          <ul class="nav-list">
+            {
+              navigationPages.map((key) => {
+                const item = pages[key];
+                return (
+                <li>
+                  <a
+                    href={item.path[locale]}
+                    aria-current={key === page ? "page" : undefined}
+                  >
+                    {t(item.label, locale)}
+                  </a>
+                </li>
+                );
+              })
+            }
+          </ul>
+        </nav>
+        <div class="language-switch" aria-label={locale === "ja" ? "言語切替" : "Language switch"}>
+          <span>{locale === "ja" ? "言語:" : "Language:"}</span>
+          <a href={otherPath} hreflang={otherLocale}>{langLabel}</a>
+        </div>
+      </div>
+    </header>
+    <main id="main-content">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>
+          &copy; {new Date().getFullYear()} Lambda Laboratory. {
+            locale === "ja"
+              ? "このサイトは Science Tokyo 公式サイトではなく、Lambda Laboratory 独自のWebサイトです。"
+              : "This is an independent Lambda Laboratory website, not the official Science Tokyo website."
+          }
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

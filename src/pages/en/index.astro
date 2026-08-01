@@ -1,0 +1,40 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import ResearchList from "@/components/ResearchList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages, siteConfig } from "@/config/site";
+import { byOrder, getDataCollection } from "@/utils/content";
+
+const locale = "en";
+const research = byOrder(await getDataCollection("research"));
+---
+
+<BaseLayout
+  locale={locale}
+  page="home"
+  title={pages.home.title.en}
+  description={siteConfig.description.en}
+>
+  <PageHero title="Lambda Laboratory" description={siteConfig.description.en} />
+  <section class="section">
+    <div class="container">
+      <h2>Overview</h2>
+      <p>
+        The Lambda Laboratory conducts research on programming language theory,
+        type systems, formal methods, and their applications. This website
+        introduces our research themes, members, and publications.
+      </p>
+      <ul class="list-plain">
+        <li><a href={pages.research.path[locale]}>View research themes</a></li>
+        <li><a href={pages.members.path[locale]}>View members</a></li>
+        <li><a href={pages.publications.path[locale]}>View publications</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>Research Themes</h2>
+      <ResearchList items={research} locale={locale} />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,55 @@
+---
+import type { Locale } from "@/config/site";
+import { t } from "@/utils/i18n";
+
+interface RepresentativePublication {
+  title: string;
+  url?: string;
+  publicationIds: string[];
+}
+
+interface Item {
+  title: Record<Locale, string>;
+  body: Record<Locale, string>;
+  representativePublications: RepresentativePublication[];
+}
+
+interface Props {
+  items: Item[];
+  locale: Locale;
+}
+
+const { items, locale } = Astro.props;
+---
+
+<div class="topic-list">
+  {
+    items.map((item) => (
+      <article class="research-topic">
+        <h2>{t(item.title, locale)}</h2>
+        {t(item.body, locale)
+          .split(/\n{2,}/)
+          .filter(Boolean)
+          .map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        {item.representativePublications.length > 0 && (
+          <>
+            <h3>{locale === "ja" ? "関連研究" : "Related Research"}</h3>
+            <ul class="list-plain">
+              {item.representativePublications.map((publication) => (
+                <li>
+                  {publication.url ? (
+                    <a href={publication.url}>{publication.title}</a>
+                  ) : (
+                    publication.title
+                  )}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </article>
+    ))
+  }
+</div>

@@ -1,0 +1,43 @@
+{
+  "id": "model-checking-safety-reliability-dos",
+  "title": {
+    "ja": "モデル検査による安全性、信頼性、DoS耐性の解析",
+    "en": "Model Checking for Safety, Reliability, and DoS Resistance"
+  },
+  "body": {
+    "ja": "モデル検査は、システムの状態を網羅的に探索し、望ましくない動作が起きないかを自動的に調べる技術です。本研究では、通信プロトコル、Webサーバ、メールシステム、負荷分散器などを形式モデルとして表し、安全性、信頼性、規則遵守、リアルタイム性を検証しています。特に、サービス不能攻撃に対する耐性を、時間や計算コストを含むプロセス代数として記述し、攻撃者とサーバの処理量の差を定量的に分析します。形式手法を実際のネットワークシステム設計へ応用する研究です。",
+    "en": "Model checking automatically explores the possible states of a system to determine whether undesirable behavior can occur. This research represents communication protocols, Web servers, e-mail systems, and load balancers as formal models, and verifies safety, reliability, policy compliance, and real-time properties. A particular focus is resistance to denial-of-service attacks. Process calculi that include time and computational cost are used to compare the workload imposed by an attacker with the processing capacity of a server. The work demonstrates how formal methods can be applied to the practical design and analysis of networked systems."
+  },
+  "representativePublicationIds": [
+    "Tomioka2004CostEstimation",
+    "Arai2012DoSRealTime",
+    "Mizuno2012ExecutionSpeed",
+    "Kumamoto2010DestructiveTesting",
+    "Shibayama2003AnZenMail"
+  ],
+  "representativePublications": [
+    {
+      "title": "A Cost Estimation Calculus for Analyzing the Resistance to Denial-of-Service Attack",
+      "url": "https://doi.org/10.1007/978-3-540-37621-7_2",
+      "publicationIds": ["Tomioka2004CostEstimation"]
+    },
+    {
+      "title": "Model Checking Approach to Real-time Aspects of Denial-of-Service Attack",
+      "publicationIds": ["Arai2012DoSRealTime"]
+    },
+    {
+      "title": "Analyzing Systems Dependent on Execution Speed with Model Checker",
+      "publicationIds": ["Mizuno2012ExecutionSpeed"]
+    },
+    {
+      "title": "Destructive Testing of Software Systems by Model Checking",
+      "publicationIds": ["Kumamoto2010DestructiveTesting"]
+    },
+    {
+      "title": "AnZenMail: A Secure and Certified E-mail System",
+      "url": "https://doi.org/10.1007/3-540-36532-x_13",
+      "publicationIds": ["Shibayama2003AnZenMail"]
+    }
+  ],
+  "order": 4
+}

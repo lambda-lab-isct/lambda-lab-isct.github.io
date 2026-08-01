@@ -1,0 +1,26 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import PublicationList from "@/components/PublicationList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/config/site";
+import publicationsData from "@/data/publications.json";
+
+const locale = "ja";
+const page = pages.publications;
+const publications = publicationsData.records;
+---
+
+<BaseLayout
+  locale={locale}
+  page="publications"
+  title={page.title.ja}
+  description={page.description.ja}
+>
+  <PageHero title={page.title.ja} description={page.description.ja} />
+  <div class="container">
+    <p class="meta">
+      提供された公開用データに基づき、研究業績を分類して掲載しています。
+    </p>
+    <PublicationList publications={publications} locale={locale} />
+  </div>
+</BaseLayout>

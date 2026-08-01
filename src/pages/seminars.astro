@@ -1,0 +1,26 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import SeminarList from "@/components/SeminarList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/config/site";
+import { byDateDesc, getDataCollection } from "@/utils/content";
+
+const locale = "ja";
+const page = pages.seminars;
+const seminars = byDateDesc(await getDataCollection("seminars"));
+---
+
+<BaseLayout
+  locale={locale}
+  page="seminars"
+  title={page.title.ja}
+  description={page.description.ja}
+  robots="noindex, follow"
+>
+  <PageHero title={page.title.ja} description={page.description.ja} />
+  <section class="section">
+    <div class="container">
+      <SeminarList seminars={seminars} locale={locale} />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,236 @@
+{
+  "id": "shin-ya-nishizaki",
+  "name": {
+    "ja": "西崎 真也",
+    "en": "Shin-ya Nishizaki"
+  },
+  "role": {
+    "ja": "教授",
+    "en": "Professor"
+  },
+  "category": "faculty",
+  "affiliation": {
+    "ja": "東京科学大学 情報基盤センター",
+    "en": "Center for Information Infrastructure, Institute of Science Tokyo"
+  },
+  "affiliations": [
+    {
+      "ja": "東京科学大学 情報基盤センター 教授",
+      "en": "Professor, Center for Information Infrastructure, Institute of Science Tokyo"
+    },
+    {
+      "ja": "情報理工学院 情報工学系 主担当",
+      "en": "Primary appointment: Department of Computer Science, School of Computing, Institute of Science Tokyo"
+    }
+  ],
+  "degree": {
+    "ja": "博士（理学）、京都大学",
+    "en": "Doctor of Science, Kyoto University"
+  },
+  "email": "nisizaki@comp.isct.ac.jp",
+  "address": {
+    "ja": "東京都目黒区大岡山二丁目12-1-W8-69",
+    "en": "W8-69, 2-12-1 Ookayama, Meguro-ku, Tokyo, Japan"
+  },
+  "education": [
+    {
+      "date": {
+        "ja": "1989年3月",
+        "en": "March 1989"
+      },
+      "text": {
+        "ja": "京都大学 理学部 卒業",
+        "en": "Graduated from the Faculty of Science, Kyoto University"
+      }
+    },
+    {
+      "date": {
+        "ja": "1991年3月",
+        "en": "March 1991"
+      },
+      "text": {
+        "ja": "京都大学 大学院理学研究科 修士課程 修了",
+        "en": "Completed the Master's Program, Graduate School of Science, Kyoto University"
+      }
+    },
+    {
+      "date": {
+        "ja": "1994年3月",
+        "en": "March 1994"
+      },
+      "text": {
+        "ja": "京都大学 大学院理学研究科 博士後期課程 修了",
+        "en": "Completed the Doctoral Program, Graduate School of Science, Kyoto University"
+      }
+    },
+    {
+      "date": {
+        "ja": "1994年3月",
+        "en": "March 1994"
+      },
+      "text": {
+        "ja": "京都大学 博士（理学）取得",
+        "en": "Doctor of Science, Kyoto University"
+      }
+    }
+  ],
+  "career": [
+    {
+      "date": {
+        "ja": "1994年4月",
+        "en": "April 1994"
+      },
+      "text": {
+        "ja": "岡山大学 工学部 助手",
+        "en": "Research Associate, Faculty of Engineering, Okayama University"
+      }
+    },
+    {
+      "date": {
+        "ja": "1995年6月",
+        "en": "June 1995"
+      },
+      "text": {
+        "ja": "岡山大学 大学院自然科学研究科 助手",
+        "en": "Research Associate, Graduate School of Natural Science and Technology, Okayama University"
+      }
+    },
+    {
+      "date": {
+        "ja": "1996年4月",
+        "en": "April 1996"
+      },
+      "text": {
+        "ja": "千葉大学 理学部 助教授",
+        "en": "Associate Professor, Faculty of Science, Chiba University"
+      }
+    },
+    {
+      "date": {
+        "ja": "1998年4月",
+        "en": "April 1998"
+      },
+      "text": {
+        "ja": "東京工業大学 大学院情報理工学研究科 助教授",
+        "en": "Associate Professor, Graduate School of Information Science and Engineering, Tokyo Institute of Technology"
+      }
+    },
+    {
+      "date": {
+        "ja": "2007年4月",
+        "en": "April 2007"
+      },
+      "text": {
+        "ja": "東京工業大学 大学院情報理工学研究科 准教授",
+        "en": "Associate Professor, Graduate School of Information Science and Engineering, Tokyo Institute of Technology"
+      }
+    },
+    {
+      "date": {
+        "ja": "2010年8月",
+        "en": "August 2010"
+      },
+      "text": {
+        "ja": "フィリピン大学ディリマン校 客員教授",
+        "en": "Visiting Professor, University of the Philippines Diliman"
+      }
+    },
+    {
+      "date": {
+        "ja": "2016年4月",
+        "en": "April 2016"
+      },
+      "text": {
+        "ja": "東京工業大学 学術国際情報センター 教授",
+        "en": "Professor, Global Scientific Information and Computing Center, Tokyo Institute of Technology"
+      }
+    },
+    {
+      "date": {
+        "ja": "2024年10月",
+        "en": "October 2024"
+      },
+      "text": {
+        "ja": "東京科学大学 情報基盤センター 教授",
+        "en": "Professor, Center for Information Infrastructure, Institute of Science Tokyo"
+      },
+      "note": {
+        "ja": "大学統合による所属組織の名称変更",
+        "en": "Name changed due to university integration"
+      }
+    }
+  ],
+  "awards": [
+    {
+      "date": {
+        "ja": "1993年10月",
+        "en": "October 1993"
+      },
+      "title": {
+        "ja": "情報処理学会研究賞",
+        "en": "IPSJ Research Award"
+      }
+    },
+    {
+      "date": {
+        "ja": "1995年5月",
+        "en": "May 1995"
+      },
+      "title": {
+        "ja": "日本ソフトウェア科学会高橋奨励賞",
+        "en": "Takahashi Encouragement Award, Japan Society for Software Science and Technology"
+      }
+    },
+    {
+      "date": {
+        "ja": "2008年11月",
+        "en": "November 2008"
+      },
+      "title": {
+        "ja": "大川出版賞",
+        "en": "Okawa Publication Prize"
+      }
+    },
+    {
+      "date": {
+        "ja": "2015年3月",
+        "en": "March 2015"
+      },
+      "title": {
+        "ja": "東工大教育賞 優秀賞「情報教育における教材開発とカリキュラム開発」",
+        "en": "Tokyo Tech Education Award, Excellence Award, for teaching-material and curriculum development in information education"
+      }
+    },
+    {
+      "date": {
+        "ja": "2018年3月",
+        "en": "March 2018"
+      },
+      "title": {
+        "ja": "東工大教育賞 優秀賞「サイバーセキュリティ特別専門学修プログラムの設計および実施」",
+        "en": "Tokyo Tech Education Award, Excellence Award, for the design and implementation of a specialized cybersecurity education program"
+      }
+    },
+    {
+      "date": {
+        "ja": "2020年3月",
+        "en": "March 2020"
+      },
+      "title": {
+        "ja": "東工大教育賞 優秀賞「大学院を対象とするデータサイエンス・AI全学教育プログラム」",
+        "en": "Tokyo Tech Education Award, Excellence Award, for a university-wide graduate program in data science and AI"
+      }
+    },
+    {
+      "date": {
+        "ja": "2021年12月",
+        "en": "December 2021"
+      },
+      "title": {
+        "ja": "東工大教育賞 最優秀賞「学生のオンライン授業受講のためのサポート体制の構築」",
+        "en": "Tokyo Tech Education Award, Grand Prize, for building a support system for students attending online classes"
+      }
+    }
+  ],
+  "order": 1
+}
