@@ -1,0 +1,54 @@
+---
+import type { Locale } from "@/config/site";
+import { t } from "@/utils/i18n";
+
+interface Member {
+  name: Record<Locale, string>;
+  role: Record<Locale, string>;
+  category: "faculty" | "staff" | "students" | "alumni" | "collaborators";
+  affiliation?: Partial<Record<Locale, string>>;
+  isPlaceholder: boolean;
+}
+
+interface Props {
+  members: Member[];
+  locale: Locale;
+}
+
+const { members, locale } = Astro.props;
+const labels = {
+  faculty: { ja: "Faculty", en: "Faculty" },
+  staff: { ja: "Staff", en: "Staff" },
+  students: { ja: "Students", en: "Students" },
+  alumni: { ja: "Alumni", en: "Alumni" },
+  collaborators: { ja: "Collaborators", en: "Collaborators" }
+} as const;
+const categories = ["faculty", "staff", "students", "alumni", "collaborators"] as const;
+---
+
+{
+  categories.map((category) => {
+    const grouped = members.filter((member) => member.category === category);
+    return (
+      <section class="section">
+        <h2>{labels[category][locale]}</h2>
+        {grouped.length === 0 ? (
+          <p class="meta">{locale === "ja" ? "登録情報はまだありません。" : "No entries yet."}</p>
+        ) : (
+          <div class="grid">
+            {grouped.map((member) => (
+              <article class="card">
+                <h3>{t(member.name, locale)}</h3>
+                <p>{t(member.role, locale)}</p>
+                {member.affiliation?.[locale] && <p class="meta">{member.affiliation[locale]}</p>}
+                {member.isPlaceholder && (
+                  <p class="meta">{locale === "ja" ? "プレースホルダー" : "Placeholder"}</p>
+                )}
+              </article>
+            ))}
+          </div>
+        )}
+      </section>
+    );
+  })
+}

@@ -1,0 +1,24 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/config/site";
+
+const locale = "ja";
+const page = pages.wctp;
+---
+
+<BaseLayout locale={locale} page="wctp" title={page.title.ja} description={page.description.ja}>
+  <PageHero title={page.title.ja} description={page.description.ja} />
+  <section class="section">
+    <div class="container">
+      <h2>WCTP アーカイブ</h2>
+      <p>
+        WCTP の入口ページです。過去の静的HTML、CSS、画像、PDFは
+        <code>public/wctp/archive/</code> 以下に配置できる構成です。WCTP2025 や WCTP2026 の実データはまだ作成していません。
+      </p>
+      <p>
+        既存HTMLを保存した場合、公開パスは <code>/wctp/archive/</code> 以下になります。
+      </p>
+    </div>
+  </section>
+</BaseLayout>

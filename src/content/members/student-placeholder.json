@@ -1,0 +1,13 @@
+{
+  "name": {
+    "ja": "学生氏名プレースホルダー",
+    "en": "Student Name Placeholder"
+  },
+  "role": {
+    "ja": "学生区分未確定",
+    "en": "Student status TBD"
+  },
+  "category": "students",
+  "isPlaceholder": true,
+  "order": 2
+}

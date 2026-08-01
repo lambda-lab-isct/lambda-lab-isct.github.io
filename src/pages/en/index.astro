@@ -1,0 +1,36 @@
+---
+import NewsList from "@/components/NewsList.astro";
+import PageHero from "@/components/PageHero.astro";
+import ResearchList from "@/components/ResearchList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages, siteConfig } from "@/config/site";
+import { byDateDesc, byOrder, getDataCollection } from "@/utils/content";
+
+const locale = "en";
+const research = byOrder(await getDataCollection("research"));
+const news = byDateDesc(await getDataCollection("news"));
+---
+
+<BaseLayout locale={locale} page="home" title={pages.home.title.en} description={siteConfig.description.en}>
+  <PageHero title="Lambda Laboratory" description={siteConfig.description.en} />
+  <section class="section">
+    <div class="container">
+      <h2>About This Site</h2>
+      <p>
+        This is the initial official website for Lambda Laboratory. Verified research content, members, contact details, and publications will be added after the information is provided.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>Research Themes</h2>
+      <ResearchList items={research} locale={locale} />
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>News</h2>
+      <NewsList items={news.slice(0, 3)} locale={locale} />
+    </div>
+  </section>
+</BaseLayout>

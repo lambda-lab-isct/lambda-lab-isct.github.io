@@ -1,0 +1,36 @@
+---
+import NewsList from "@/components/NewsList.astro";
+import PageHero from "@/components/PageHero.astro";
+import ResearchList from "@/components/ResearchList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages, siteConfig } from "@/config/site";
+import { byDateDesc, byOrder, getDataCollection } from "@/utils/content";
+
+const locale = "ja";
+const research = byOrder(await getDataCollection("research"));
+const news = byDateDesc(await getDataCollection("news"));
+---
+
+<BaseLayout locale={locale} page="home" title={pages.home.title.ja} description={siteConfig.description.ja}>
+  <PageHero title="Lambda Laboratory" description={siteConfig.description.ja} />
+  <section class="section">
+    <div class="container">
+      <h2>このサイトについて</h2>
+      <p>
+        Lambda Laboratory の公式Webサイト初期版です。正式な研究内容、メンバー、連絡先、研究業績は、確認済み情報の提供後に掲載します。
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>研究テーマ</h2>
+      <ResearchList items={research} locale={locale} />
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>ニュース</h2>
+      <NewsList items={news.slice(0, 3)} locale={locale} />
+    </div>
+  </section>
+</BaseLayout>

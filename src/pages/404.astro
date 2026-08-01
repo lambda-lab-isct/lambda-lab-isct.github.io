@@ -1,0 +1,19 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const locale = "ja";
+---
+
+<BaseLayout locale={locale} page="home" title="ページが見つかりません" description="指定されたページは見つかりませんでした。">
+  <section class="hero">
+    <div class="container">
+      <h1>ページが見つかりません</h1>
+      <p>URLを確認するか、ホームへ戻ってください。</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <a href="/">ホームへ戻る</a>
+    </div>
+  </section>
+</BaseLayout>

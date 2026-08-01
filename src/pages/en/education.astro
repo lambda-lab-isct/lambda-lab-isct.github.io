@@ -1,0 +1,20 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import PlaceholderNote from "@/components/PlaceholderNote.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/config/site";
+
+const locale = "en";
+const page = pages.education;
+---
+
+<BaseLayout locale={locale} page="education" title={page.title.en} description={page.description.en}>
+  <PageHero title={page.title.en} description={page.description.en} />
+  <section class="section">
+    <div class="container">
+      <PlaceholderNote locale={locale} />
+      <h2>Education Activities</h2>
+      <p>Official information about courses, supervision, and student recruitment has not been provided yet. Only verified information should be published here.</p>
+    </div>
+  </section>
+</BaseLayout>

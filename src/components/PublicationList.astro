@@ -1,0 +1,66 @@
+---
+import type { Locale } from "@/config/site";
+import { t } from "@/utils/i18n";
+
+interface Publication {
+  title: Record<Locale, string>;
+  authors: string[];
+  category: "journal" | "conference" | "book" | "workshop" | "other";
+  year: number;
+  venue?: Partial<Record<Locale, string>>;
+  doi?: string;
+  url?: string;
+  note?: Partial<Record<Locale, string>>;
+  isPlaceholder: boolean;
+}
+
+interface Props {
+  publications: Publication[];
+  locale: Locale;
+}
+
+const { publications, locale } = Astro.props;
+const categories = [
+  ["journal", "Journal Articles"],
+  ["conference", "Conference Papers"],
+  ["book", "Books and Book Chapters"],
+  ["workshop", "Workshop Papers"],
+  ["other", "Other Publications"]
+] as const;
+---
+
+{
+  categories.map(([category, label]) => {
+    const grouped = publications.filter((publication) => publication.category === category);
+    return (
+      <section class="section">
+        <h2>{label}</h2>
+        {grouped.length === 0 ? (
+          <p class="meta">{locale === "ja" ? "登録情報はまだありません。" : "No entries yet."}</p>
+        ) : (
+          <ul class="list-plain">
+            {grouped.map((publication) => (
+              <li class="card">
+                <strong>{t(publication.title, locale)}</strong>
+                <br />
+                <span>{publication.authors.join(", ")} ({publication.year})</span>
+                {publication.venue?.[locale] && <span>. {publication.venue[locale]}</span>}
+                {publication.doi && <span>. DOI: {publication.doi}</span>}
+                {publication.url && (
+                  <>
+                    {" "}
+                    <a href={publication.url}>URL</a>
+                  </>
+                )}
+                {publication.note?.[locale] && <p class="meta">{publication.note[locale]}</p>}
+                {publication.isPlaceholder && (
+                  <p class="meta">{locale === "ja" ? "プレースホルダー" : "Placeholder"}</p>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    );
+  })
+}

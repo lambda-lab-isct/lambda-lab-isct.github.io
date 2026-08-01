@@ -1,0 +1,15 @@
+---
+interface Props {
+  locale: "ja" | "en";
+}
+
+const { locale } = Astro.props;
+---
+
+<p class="placeholder-note">
+  {
+    locale === "ja"
+      ? "このページには構造確認用のプレースホルダーが含まれます。実在する人物、研究業績、連絡先、住所は未提供のため掲載していません。"
+      : "This page contains explicit placeholders for structure review. Real people, publications, contact details, and addresses have not been provided yet."
+  }
+</p>

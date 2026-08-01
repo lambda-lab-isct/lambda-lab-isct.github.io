@@ -1,0 +1,18 @@
+{
+  "title": {
+    "ja": "研究テーマ未確定プレースホルダー",
+    "en": "Research Theme Placeholder"
+  },
+  "summary": {
+    "ja": "正式な研究テーマ説明が提供された後に置き換えるための項目です。",
+    "en": "Replace this item after official research theme descriptions are provided."
+  },
+  "tags": [
+    {
+      "ja": "サンプル",
+      "en": "Sample"
+    }
+  ],
+  "isPlaceholder": true,
+  "order": 1
+}

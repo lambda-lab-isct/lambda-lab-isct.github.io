@@ -1,0 +1,33 @@
+---
+import type { Locale } from "@/config/site";
+import { t } from "@/utils/i18n";
+
+interface NewsItem {
+  date: string;
+  title: Record<Locale, string>;
+  body: Record<Locale, string>;
+  url?: string;
+  isPlaceholder: boolean;
+}
+
+interface Props {
+  items: NewsItem[];
+  locale: Locale;
+}
+
+const { items, locale } = Astro.props;
+---
+
+<ul class="list-plain">
+  {
+    items.map((item) => (
+      <li class="card">
+        <time datetime={item.date} class="meta">{item.date}</time>
+        <h3>{t(item.title, locale)}</h3>
+        <p>{t(item.body, locale)}</p>
+        {item.url && <a href={item.url}>{locale === "ja" ? "詳細" : "Details"}</a>}
+        {item.isPlaceholder && <p class="meta">{locale === "ja" ? "プレースホルダー" : "Placeholder"}</p>}
+      </li>
+    ))
+  }
+</ul>
