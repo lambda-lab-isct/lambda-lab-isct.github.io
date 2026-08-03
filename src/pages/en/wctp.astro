@@ -1,7 +1,7 @@
 ---
 import PageHero from "@/components/PageHero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { pages } from "@/config/site";
+import { pages, wctpArchiveLinks } from "@/config/site";
 
 const locale = "en";
 const page = pages.wctp;
@@ -12,15 +12,22 @@ const page = pages.wctp;
   page="wctp"
   title={page.title.en}
   description={page.description.en}
-  robots="noindex, follow"
 >
   <PageHero title={page.title.en} description={page.description.en} />
   <section class="section">
     <div class="container">
-      <p>
-        Past WCTP websites are being prepared for migration. Links will be
-        provided on this page when they become available.
-      </p>
+      <h2>WCTP Archive</h2>
+      <ul class="list-plain">
+        {
+          wctpArchiveLinks.map((archive) => (
+            <li class="card">
+              <h3>
+                <a href={archive.path}>{archive.label.en}</a>
+              </h3>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
 </BaseLayout>

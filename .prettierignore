@@ -2,3 +2,4 @@ dist/
 node_modules/
 .astro/
 public/wctp/archive/
+public/wctp/wctp2026/

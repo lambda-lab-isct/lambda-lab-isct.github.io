@@ -35,14 +35,16 @@ export const navigationPages: PageKey[] = [
   "access",
 ];
 
-export const sitemapPages: PageKey[] = navigationPages;
+export const sitemapPages: PageKey[] = [...navigationPages, "wctp"];
+export const wctpArchiveLinks = [
+  {
+    year: "2026",
+    path: "/wctp/wctp2026/",
+    label: { ja: "WCTP 2026", en: "WCTP 2026" },
+  },
+] as const;
 
-export const deferredPages: PageKey[] = [
-  "news",
-  "education",
-  "seminars",
-  "wctp",
-];
+export const deferredPages: PageKey[] = ["news", "education", "seminars"];
 
 export const pages: Record<
   PageKey,
