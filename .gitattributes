@@ -1,1 +1,4 @@
 * text=auto eol=lf
+
+# Preserve whitespace in archived WCTP source files.
+public/wctp/wctp2026/** -whitespace

@@ -1,11 +1,21 @@
-import { pages, siteConfig, sitemapPages } from "@/config/site";
+import {
+  pages,
+  siteConfig,
+  sitemapPages,
+  wctpArchiveLinks,
+} from "@/config/site";
 
 export function GET() {
-  const urls = sitemapPages.flatMap((pageKey) =>
-    siteConfig.locales.map((locale) =>
-      new URL(pages[pageKey].path[locale], siteConfig.url).toString(),
+  const urls = [
+    ...sitemapPages.flatMap((pageKey) =>
+      siteConfig.locales.map((locale) =>
+        new URL(pages[pageKey].path[locale], siteConfig.url).toString(),
+      ),
     ),
-  );
+    ...wctpArchiveLinks.map((archive) =>
+      new URL(archive.path, siteConfig.url).toString(),
+    ),
+  ];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
