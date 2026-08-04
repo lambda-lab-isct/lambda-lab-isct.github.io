@@ -8,6 +8,14 @@ export const localeLabels: Record<Locale, string> = {
   ja: "日本語",
   en: "English",
   la: "Latina",
+  zh: "Chinese",
+};
+
+export const localeLanguageTags: Record<Locale, string> = {
+  ja: "ja",
+  en: "en",
+  la: "la",
+  zh: "lzh",
 };
 
 export function getAlternatePath(page: PageKey, locale: Locale) {

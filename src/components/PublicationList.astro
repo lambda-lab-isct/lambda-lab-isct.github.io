@@ -53,6 +53,12 @@ const uiText = {
     repository: "Repositorium",
     abstract: "Summarium",
   },
+  zh: {
+    noEntries: "未有公開論著。",
+    openAccess: "公開閲覧",
+    repository: "保管所",
+    abstract: "要旨",
+  },
 } as const satisfies Record<Locale, Record<string, string>>;
 
 function venueParts(publication: Publication) {

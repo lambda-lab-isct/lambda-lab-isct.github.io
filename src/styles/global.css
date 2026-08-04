@@ -120,6 +120,13 @@ a:hover {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0;
+  white-space: nowrap;
+}
+
+:lang(lzh) {
+  font-family:
+    "Yu Gothic", "YuGothic", "Hiragino Sans", "Meiryo", "Noto Sans CJK JP",
+    system-ui, sans-serif;
 }
 
 .brand-note {
@@ -338,6 +345,10 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem 0.8rem;
+}
+
+.publication-links a {
+  overflow-wrap: anywhere;
 }
 
 .publication-item details {

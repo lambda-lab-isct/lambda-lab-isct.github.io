@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const locale = "zh";
+---
+
+<BaseLayout
+  locale={locale}
+  page="home"
+  title="未見頁"
+  description="求頁不可得。"
+  robots="noindex, follow"
+>
+  <section class="hero">
+    <div class="container">
+      <h1>未見頁</h1>
+      <p>請検URL或還λ研究室初頁。</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <a href="/zh/">還初頁</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -33,11 +33,11 @@ interface Props {
 
 const { members, locale } = Astro.props;
 const labels = {
-  faculty: { ja: "教員", en: "Faculty", la: "Docentes" },
-  staff: { ja: "スタッフ", en: "Staff", la: "Administri" },
-  students: { ja: "学生", en: "Students", la: "Discipuli" },
-  alumni: { ja: "卒業生・修了生", en: "Alumni", la: "Alumni" },
-  collaborators: { ja: "共同研究者", en: "Collaborators", la: "Collaboratores" },
+  faculty: { ja: "教員", en: "Faculty", la: "Docentes", zh: "教員" },
+  staff: { ja: "スタッフ", en: "Staff", la: "Administri", zh: "職員" },
+  students: { ja: "学生", en: "Students", la: "Discipuli", zh: "学生" },
+  alumni: { ja: "卒業生・修了生", en: "Alumni", la: "Alumni", zh: "卒業生修了生" },
+  collaborators: { ja: "共同研究者", en: "Collaborators", la: "Collaboratores", zh: "共同研究者" },
 } as const;
 const uiText = {
   ja: {
@@ -69,6 +69,16 @@ const uiText = {
     education: "Educatio",
     career: "Cursus honorum",
     awards: "Praemia",
+  },
+  zh: {
+    noEntries: "未有公開之記。",
+    affiliations: "所属職名",
+    degree: "学位",
+    email: "電郵",
+    address: "勤務先住所",
+    education: "学歴",
+    career: "職歴",
+    awards: "受賞",
   },
 } as const satisfies Record<Locale, Record<string, string>>;
 const categories = [

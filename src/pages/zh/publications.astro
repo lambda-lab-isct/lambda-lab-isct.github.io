@@ -1,0 +1,24 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import PublicationList from "@/components/PublicationList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/config/site";
+import publicationsData from "@/data/publications.json";
+
+const locale = "zh";
+const page = pages.publications;
+const publications = publicationsData.records;
+---
+
+<BaseLayout
+  locale={locale}
+  page="publications"
+  title={page.title.zh}
+  description={page.description.zh}
+>
+  <PageHero title={page.title.zh} description={page.description.zh} />
+  <div class="container">
+    <p>此頁列主要論著之選。書誌悉仍原表記。</p>
+    <PublicationList publications={publications} locale={locale} />
+  </div>
+</BaseLayout>

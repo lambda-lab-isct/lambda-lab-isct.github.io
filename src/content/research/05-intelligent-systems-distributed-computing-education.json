@@ -3,12 +3,14 @@
   "title": {
     "ja": "知的システム、分散計算、情報工学教育への応用",
     "en": "Applications to Intelligent Systems, Distributed Computing, and Computing Education",
-    "la": "Applicationes ad systemata intelligentia, computationem distributam et educationem informaticam"
+    "la": "Applicationes ad systemata intelligentia, computationem distributam et educationem informaticam",
+    "zh": "知的系分散計算及情報工学教育之応用"
   },
   "body": {
     "ja": "計算機科学の理論を、知的システムや教育、実用的なソフトウェアへ展開する研究です。人工知能では、知識表現と数値計算を組み合わせ、生命現象の複雑な制御を説明可能な形でシミュレーションしました。分散計算では、ブログなど既存のWeb基盤を計算資源として利用する方式や、オンライン証明・判定システムを研究しています。また、利用者の課題を出発点とするPBL型教育を通じ、要求分析、チーム形成、国際協働、システム開発を一体的に学ぶ情報工学教育を実践しています。",
     "en": "This theme applies theoretical computer science to intelligent systems, education, and practical software. In artificial intelligence, the research combines knowledge representation with numerical computation to simulate complex biological regulation in an explainable form. In distributed computing, it explores methods that use existing Web infrastructure, such as blogs, as computational resources, as well as online proof and decision systems. It also develops project-based computing education that begins with real user needs and integrates requirements analysis, team building, international collaboration, and system development.",
-    "la": "Hoc argumentum scientiam computatralem theoreticam ad systemata intelligentia, educationem et programmata practica applicat. In intelligentia artificiali, investigatio repraesentationem scientiae cum computatione numerica coniungit ut moderationem biologicam complexam forma explicabili simulet. In computatione distributa, modos explorat quibus infrastructura Web iam exsistens, ut diaria, pro opibus computationalibus adhibetur, necnon systemata probationis et decisionis online. Etiam educationem informaticam per opera project-based evolvit, quae a necessitatibus veris usorum incipit atque analysin postulatorum, formationem gregis, collaborationem internationalem et progressionem systematum coniungit."
+    "la": "Hoc argumentum scientiam computatralem theoreticam ad systemata intelligentia, educationem et programmata practica applicat. In intelligentia artificiali, investigatio repraesentationem scientiae cum computatione numerica coniungit ut moderationem biologicam complexam forma explicabili simulet. In computatione distributa, modos explorat quibus infrastructura Web iam exsistens, ut diaria, pro opibus computationalibus adhibetur, necnon systemata probationis et decisionis online. Etiam educationem informaticam per opera project-based evolvit, quae a necessitatibus veris usorum incipit atque analysin postulatorum, formationem gregis, collaborationem internationalem et progressionem systematum coniungit.",
+    "zh": "此題以計算機科学理論展於知的系教育及実用軟件。人工知能中結合知識表現与数値計算以可説明形模擬生命現象之複雑制御。分散計算中究用既存Web基盤如記録頁為計算資源之法及在線証明判定系。又実践始於利用者課題之PBL型教育合要求分析集団形成国際協働及系開発以学情報工学。"
   },
   "representativePublicationIds": [
     "Morimoto2018ITStudentProject",
