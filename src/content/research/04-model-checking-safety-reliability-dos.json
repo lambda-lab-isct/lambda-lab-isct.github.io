@@ -3,12 +3,14 @@
   "title": {
     "ja": "モデル検査による安全性、信頼性、DoS耐性の解析",
     "en": "Model Checking for Safety, Reliability, and DoS Resistance",
-    "la": "Inspectio exemplarium ad salutem, fidem et resistentiam DoS"
+    "la": "Inspectio exemplarium ad salutem, fidem et resistentiam DoS",
+    "zh": "模型検査安全性信頼性及DoS耐性解析"
   },
   "body": {
     "ja": "モデル検査は、システムの状態を網羅的に探索し、望ましくない動作が起きないかを自動的に調べる技術です。本研究では、通信プロトコル、Webサーバ、メールシステム、負荷分散器などを形式モデルとして表し、安全性、信頼性、規則遵守、リアルタイム性を検証しています。特に、サービス不能攻撃に対する耐性を、時間や計算コストを含むプロセス代数として記述し、攻撃者とサーバの処理量の差を定量的に分析します。形式手法を実際のネットワークシステム設計へ応用する研究です。",
     "en": "Model checking automatically explores the possible states of a system to determine whether undesirable behavior can occur. This research represents communication protocols, Web servers, e-mail systems, and load balancers as formal models, and verifies safety, reliability, policy compliance, and real-time properties. A particular focus is resistance to denial-of-service attacks. Process calculi that include time and computational cost are used to compare the workload imposed by an attacker with the processing capacity of a server. The work demonstrates how formal methods can be applied to the practical design and analysis of networked systems.",
-    "la": "Inspectio exemplarium status possibiles systematis automatice perquirit ut determinet utrum mores non optati accidere possint. Haec investigatio protocolla communicationis, servientes Web, systemata epistularum electronicarum et distributores onerum ut exemplaria formalia repraesentat, atque salutem, fidem, obsequium regulis et proprietates temporis realis verificat. Praecipuus focus est resistentia adversus impetus denial-of-service. Calculi processuum qui tempus et sumptum computationalem includunt adhibentur ad onus ab oppugnatore impositum cum capacitate processus servientis comparandum. Opus demonstrat quomodo methodi formales ad consilium et analysin practicam systematum retialium applicari possint."
+    "la": "Inspectio exemplarium status possibiles systematis automatice perquirit ut determinet utrum mores non optati accidere possint. Haec investigatio protocolla communicationis, servientes Web, systemata epistularum electronicarum et distributores onerum ut exemplaria formalia repraesentat, atque salutem, fidem, obsequium regulis et proprietates temporis realis verificat. Praecipuus focus est resistentia adversus impetus denial-of-service. Calculi processuum qui tempus et sumptum computationalem includunt adhibentur ad onus ab oppugnatore impositum cum capacitate processus servientis comparandum. Opus demonstrat quomodo methodi formales ad consilium et analysin practicam systematum retialium applicari possint.",
+    "zh": "模型検査者遍探索系之可能状態自動判定不望動作可起否之技術也。本研究以通信規約Web服務器郵便系負荷分散器等為形式模型検証安全性信頼性規則遵守及実時間性。特注服務不能攻撃耐性。用含時間及計算費用之過程代数比較攻撃者課負荷与服務器処理能力。此示形式法可応用於実際網絡系設計解析。"
   },
   "representativePublicationIds": [
     "Tomioka2004CostEstimation",

@@ -10,6 +10,7 @@ import {
 import {
   getAlternatePath,
   getCanonicalUrl,
+  localeLanguageTags,
   localeLabels,
   t,
 } from "@/utils/i18n";
@@ -26,10 +27,12 @@ const { locale, page, title, description, robots } = Astro.props;
 const canonicalUrl = getCanonicalUrl(pages[page].path[locale]);
 const languageLinks = siteConfig.locales.map((targetLocale) => ({
   locale: targetLocale,
+  languageTag: localeLanguageTags[targetLocale],
   path: getAlternatePath(page, targetLocale),
   label: localeLabels[targetLocale],
   isCurrent: targetLocale === locale,
 }));
+const languageTag = localeLanguageTags[locale];
 const fullTitle =
   page === "home" ? siteConfig.name[locale] : `${title} | ${siteConfig.name[locale]}`;
 const uiText = {
@@ -60,11 +63,19 @@ const uiText = {
     footer:
       "Haec pagina est situs proprius Laboratorii Lambda, non situs officialis Science Tokyo.",
   },
+  zh: {
+    skip: "至本文",
+    brandNote: "Institute of Science Tokyo研究室頁",
+    primaryNav: "主要導引",
+    languageSwitch: "言語切替",
+    language: "言語:",
+    footer: "此乃λ研究室自設頁非Science Tokyo公式頁。",
+  },
 } satisfies Record<Locale, Record<string, string>>;
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang={languageTag}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -76,7 +87,7 @@ const uiText = {
       siteConfig.locales.map((targetLocale) => (
         <link
           rel="alternate"
-          hreflang={targetLocale}
+          hreflang={localeLanguageTags[targetLocale]}
           href={getCanonicalUrl(pages[page].path[targetLocale])}
         />
       ))
@@ -125,8 +136,8 @@ const uiText = {
                 <li>
                   <a
                     href={link.path}
-                    hreflang={link.locale}
-                    lang={link.locale}
+                    hreflang={link.languageTag}
+                    lang={link.languageTag}
                     aria-current={link.isCurrent ? "true" : undefined}
                   >
                     {link.label}

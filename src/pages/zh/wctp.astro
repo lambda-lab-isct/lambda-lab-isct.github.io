@@ -1,0 +1,28 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages, wctpArchiveLinks } from "@/config/site";
+
+const locale = "zh";
+const page = pages.wctp;
+---
+
+<BaseLayout locale={locale} page="wctp" title={page.title.zh} description={page.description.zh}>
+  <PageHero title={page.title.zh} description={page.description.zh} />
+  <section class="section">
+    <div class="container">
+      <h2>WCTP記録</h2>
+      <ul class="list-plain">
+        {
+          wctpArchiveLinks.map((archive) => (
+            <li class="card">
+              <h3>
+                <a href={archive.path}>{archive.label.zh}</a>
+              </h3>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

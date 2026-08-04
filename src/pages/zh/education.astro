@@ -1,0 +1,23 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/config/site";
+
+const locale = "zh";
+const page = pages.education;
+---
+
+<BaseLayout
+  locale={locale}
+  page="education"
+  title={page.title.zh}
+  description={page.description.zh}
+  robots="noindex, follow"
+>
+  <PageHero title={page.title.zh} description={page.description.zh} />
+  <section class="section">
+    <div class="container">
+      <p>教育之事待確定後載。</p>
+    </div>
+  </section>
+</BaseLayout>

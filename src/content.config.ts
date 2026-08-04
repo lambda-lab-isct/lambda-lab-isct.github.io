@@ -6,6 +6,7 @@ const localizedText = z.object({
   ja: z.string(),
   en: z.string(),
   la: z.string(),
+  zh: z.string(),
 });
 
 const optionalLocalizedText = z
@@ -13,6 +14,7 @@ const optionalLocalizedText = z
     ja: z.string().optional(),
     en: z.string().optional(),
     la: z.string().optional(),
+    zh: z.string().optional(),
   })
   .optional();
 

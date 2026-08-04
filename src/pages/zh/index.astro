@@ -1,0 +1,38 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import ResearchList from "@/components/ResearchList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages, siteConfig } from "@/config/site";
+import { byOrder, getDataCollection } from "@/utils/content";
+
+const locale = "zh";
+const research = byOrder(await getDataCollection("research"));
+---
+
+<BaseLayout
+  locale={locale}
+  page="home"
+  title={pages.home.title.zh}
+  description={siteConfig.description.zh}
+>
+  <PageHero title="λ研究室" description={siteConfig.description.zh} />
+  <section class="section">
+    <div class="container">
+      <h2>大概</h2>
+      <p>
+        λ研究室究程序言語理論型系形式法及其用。此頁記研究題目諸員論著。
+      </p>
+      <ul class="list-plain">
+        <li><a href={pages.research.path[locale]}>見研究題目</a></li>
+        <li><a href={pages.members.path[locale]}>見諸員</a></li>
+        <li><a href={pages.publications.path[locale]}>見論著</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>研究題目</h2>
+      <ResearchList items={research} locale={locale} />
+    </div>
+  </section>
+</BaseLayout>
