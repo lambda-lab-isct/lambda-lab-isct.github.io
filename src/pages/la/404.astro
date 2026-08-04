@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const locale = "la";
+---
+
+<BaseLayout
+  locale={locale}
+  page="home"
+  title="Pagina non inventa"
+  description="Pagina petita inventa non est."
+  robots="noindex, follow"
+>
+  <section class="hero">
+    <div class="container">
+      <h1>Pagina non inventa</h1>
+      <p>URL inspice aut ad initium Laboratorii Lambda redi.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <a href="/la/">Ad initium redire</a>
+    </div>
+  </section>
+</BaseLayout>

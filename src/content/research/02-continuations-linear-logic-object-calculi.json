@@ -2,11 +2,13 @@
   "id": "continuations-linear-logic-object-calculi",
   "title": {
     "ja": "継続、線形論理、オブジェクト計算",
-    "en": "Continuations, Linear Logic, and Object Calculi"
+    "en": "Continuations, Linear Logic, and Object Calculi",
+    "la": "Continuationes, logica linearis et calculi obiectorum"
   },
   "body": {
     "ja": "「継続」は、ある時点から先に実行される計算を値として表したものです。例外処理、コルーチン、非局所脱出、バックトラックなどを統一的に記述できます。本研究では、継続をファーストクラスの値として扱うラムダ計算やオブジェクト計算を設計し、線形論理との対応、評価順序、型推論、制御効果を調べています。特に、資源を一度だけ使うという線形性と、計算を複製できる継続との関係を明確にし、高度な制御機構を安全に扱う型システムの基礎を与えています。",
-    "en": "A continuation represents the rest of a computation from a particular point and treats it as a value. This concept provides a unified way to describe exception handling, coroutines, non-local exits, and backtracking. This research designs lambda calculi and object calculi in which continuations are first-class values, and studies their relationships with linear logic, evaluation order, type inference, and computational effects. In particular, it clarifies the relationship between linearity, where a resource is used exactly once, and continuations, which may duplicate computations, thereby providing foundations for type systems that safely handle advanced control mechanisms."
+    "en": "A continuation represents the rest of a computation from a particular point and treats it as a value. This concept provides a unified way to describe exception handling, coroutines, non-local exits, and backtracking. This research designs lambda calculi and object calculi in which continuations are first-class values, and studies their relationships with linear logic, evaluation order, type inference, and computational effects. In particular, it clarifies the relationship between linearity, where a resource is used exactly once, and continuations, which may duplicate computations, thereby providing foundations for type systems that safely handle advanced control mechanisms.",
+    "la": "Continuatio reliquam computationem a certo puncto ut valorem repraesentat. Haec notio modum unum praebet ad exceptiones, coroutines, exitus non locales et regressum describenda. Haec investigatio calculos lambda et calculos obiectorum designat in quibus continuationes sunt valores primi ordinis, atque relationes earum cum logica lineari, ordine aestimationis, inferentia typorum et effectibus computationalibus investigat. Praesertim relationem inter linearitatem, ubi res semel tantum adhibetur, et continuationes, quae computationes duplicare possunt, declarat, ita fundamenta systematum typorum praebens quae machinationes provectas controlis tuto tractant."
   },
   "representativePublicationIds": [
     "Nishizaki2019MLPolymorphism",

@@ -589,6 +589,23 @@ const selectionReport = {
   excluded: [],
 };
 
+function loadExistingPublicationOrder(filePath) {
+  if (!fs.existsSync(filePath)) return new Map();
+  try {
+    const existing = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    return new Map(
+      (existing.records ?? []).map((record, index) => [
+        record.publication_id,
+        index,
+      ]),
+    );
+  } catch {
+    return new Map();
+  }
+}
+
+const existingPublicationOrder = loadExistingPublicationOrder(outputPath);
+
 function publicationYearValue(row) {
   return `${row.publication_year ?? ""}`.trim();
 }
@@ -764,6 +781,11 @@ for (const record of bibtexRecords) {
 }
 
 records.sort((a, b) => {
+  const aOrder = existingPublicationOrder.get(a.publication_id);
+  const bOrder = existingPublicationOrder.get(b.publication_id);
+  if (aOrder !== undefined && bOrder !== undefined) return aOrder - bOrder;
+  if (aOrder !== undefined) return -1;
+  if (bOrder !== undefined) return 1;
   const year = (b.publication_year ?? 0) - (a.publication_year ?? 0);
   if (year !== 0) return year;
   return (a.title ?? "").localeCompare(b.title ?? "");
@@ -835,7 +857,16 @@ if (output.import_report.year_range.min === Number.POSITIVE_INFINITY) {
 }
 
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-fs.writeFileSync(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
+const outputText = `${JSON.stringify(output, null, 2)}\n`
+  .replace(
+    /"included_record_statuses": \[\n\s+"verified",\n\s+"partially_verified"\n\s+\]/,
+    '"included_record_statuses": ["verified", "partially_verified"]',
+  )
+  .replace(
+    /"excluded_record_statuses": \[\n\s+"unresolved",\n\s+"non_publication"\n\s+\]/,
+    '"excluded_record_statuses": ["unresolved", "non_publication"]',
+  );
+fs.writeFileSync(outputPath, outputText, "utf8");
 
 console.log(
   JSON.stringify(

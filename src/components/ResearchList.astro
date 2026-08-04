@@ -20,6 +20,11 @@ interface Props {
 }
 
 const { items, locale } = Astro.props;
+const relatedResearchLabels = {
+  ja: "関連研究",
+  en: "Related Research",
+  la: "Investigationes relatae",
+} as const satisfies Record<Locale, string>;
 ---
 
 <div class="topic-list">
@@ -35,7 +40,7 @@ const { items, locale } = Astro.props;
           ))}
         {item.representativePublications.length > 0 && (
           <>
-            <h3>{locale === "ja" ? "関連研究" : "Related Research"}</h3>
+            <h3>{relatedResearchLabels[locale]}</h3>
             <ul class="list-plain">
               {item.representativePublications.map((publication) => (
                 <li>

@@ -5,12 +5,14 @@ import { z } from "astro/zod";
 const localizedText = z.object({
   ja: z.string(),
   en: z.string(),
+  la: z.string(),
 });
 
 const optionalLocalizedText = z
   .object({
     ja: z.string().optional(),
     en: z.string().optional(),
+    la: z.string().optional(),
   })
   .optional();
 

@@ -1,0 +1,23 @@
+---
+import MemberList from "@/components/MemberList.astro";
+import PageHero from "@/components/PageHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/config/site";
+import { byOrder, getDataCollection } from "@/utils/content";
+
+const locale = "la";
+const page = pages.members;
+const members = byOrder(await getDataCollection("members"));
+---
+
+<BaseLayout
+  locale={locale}
+  page="members"
+  title={page.title.la}
+  description={page.description.la}
+>
+  <PageHero title={page.title.la} description={page.description.la} />
+  <div class="container">
+    <MemberList members={members} locale={locale} />
+  </div>
+</BaseLayout>

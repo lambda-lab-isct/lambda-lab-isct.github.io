@@ -1,0 +1,41 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import ResearchList from "@/components/ResearchList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages, siteConfig } from "@/config/site";
+import { byOrder, getDataCollection } from "@/utils/content";
+
+const locale = "la";
+const research = byOrder(await getDataCollection("research"));
+---
+
+<BaseLayout
+  locale={locale}
+  page="home"
+  title={pages.home.title.la}
+  description={siteConfig.description.la}
+>
+  <PageHero title="Laboratorium Lambda" description={siteConfig.description.la} />
+  <section class="section">
+    <div class="container">
+      <h2>Conspectus</h2>
+      <p>
+        Laboratorium Lambda investigationem agit de theoria linguarum
+        programmandi, systematibus typorum, methodis formalibus earumque
+        applicationibus. Haec pagina argumenta investigationis, sodales et
+        publicationes introducit.
+      </p>
+      <ul class="list-plain">
+        <li><a href={pages.research.path[locale]}>Argumenta investigationis videre</a></li>
+        <li><a href={pages.members.path[locale]}>Sodales videre</a></li>
+        <li><a href={pages.publications.path[locale]}>Publicationes videre</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>Argumenta investigationis</h2>
+      <ResearchList items={research} locale={locale} />
+    </div>
+  </section>
+</BaseLayout>

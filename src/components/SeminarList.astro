@@ -16,15 +16,28 @@ interface Props {
 }
 
 const { seminars, locale } = Astro.props;
+const uiText = {
+  ja: {
+    noEntries: "現在掲載中のセミナー情報はありません。",
+    speaker: "講演者:",
+    venue: "会場:",
+  },
+  en: {
+    noEntries: "There are currently no seminar announcements.",
+    speaker: "Speaker:",
+    venue: "Venue:",
+  },
+  la: {
+    noEntries: "Nuntii seminariorum nunc non adsunt.",
+    speaker: "Orator:",
+    venue: "Locus:",
+  },
+} as const satisfies Record<Locale, Record<string, string>>;
 ---
 
 {
   seminars.length === 0 ? (
-    <p class="meta">
-      {locale === "ja"
-        ? "現在掲載中のセミナー情報はありません。"
-        : "There are currently no seminar announcements."}
-    </p>
+    <p class="meta">{uiText[locale].noEntries}</p>
   ) : (
     <ul class="list-plain">
       {seminars.map((seminar) => (
@@ -34,12 +47,10 @@ const { seminars, locale } = Astro.props;
           </time>
           <h3>{t(seminar.title, locale)}</h3>
           <p>
-            <strong>{locale === "ja" ? "講演者:" : "Speaker:"}</strong>{" "}
-            {t(seminar.speaker, locale)}
+            <strong>{uiText[locale].speaker}</strong> {t(seminar.speaker, locale)}
           </p>
           <p>
-            <strong>{locale === "ja" ? "会場:" : "Venue:"}</strong>{" "}
-            {t(seminar.venue, locale)}
+            <strong>{uiText[locale].venue}</strong> {t(seminar.venue, locale)}
           </p>
           {seminar.abstract && <p>{t(seminar.abstract, locale)}</p>}
         </li>
