@@ -15,15 +15,25 @@ interface Props {
 }
 
 const { items, locale } = Astro.props;
+const uiText = {
+  ja: {
+    noEntries: "現在掲載中のお知らせはありません。",
+    details: "詳細",
+  },
+  en: {
+    noEntries: "There are currently no announcements.",
+    details: "Details",
+  },
+  la: {
+    noEntries: "Nuntii publici nunc non adsunt.",
+    details: "Singula",
+  },
+} as const satisfies Record<Locale, Record<string, string>>;
 ---
 
 {
   items.length === 0 ? (
-    <p class="meta">
-      {locale === "ja"
-        ? "現在掲載中のお知らせはありません。"
-        : "There are currently no announcements."}
-    </p>
+    <p class="meta">{uiText[locale].noEntries}</p>
   ) : (
     <ul class="list-plain">
       {items.map((item) => (
@@ -33,9 +43,7 @@ const { items, locale } = Astro.props;
           </time>
           <h3>{t(item.title, locale)}</h3>
           <p>{t(item.body, locale)}</p>
-          {item.url && (
-            <a href={item.url}>{locale === "ja" ? "詳細" : "Details"}</a>
-          )}
+          {item.url && <a href={item.url}>{uiText[locale].details}</a>}
         </li>
       ))}
     </ul>

@@ -1,0 +1,23 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/config/site";
+
+const locale = "la";
+const page = pages.education;
+---
+
+<BaseLayout
+  locale={locale}
+  page="education"
+  title={page.title.la}
+  description={page.description.la}
+  robots="noindex, follow"
+>
+  <PageHero title={page.title.la} description={page.description.la} />
+  <section class="section">
+    <div class="container">
+      <p>Notitia de operibus educatoriis post confirmationem addetur.</p>
+    </div>
+  </section>
+</BaseLayout>

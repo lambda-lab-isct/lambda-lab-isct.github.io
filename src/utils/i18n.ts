@@ -1,15 +1,17 @@
 import { pages, siteConfig, type Locale, type PageKey } from "@/config/site";
 
 export function t(value: Record<Locale, string>, locale: Locale) {
-  return value[locale] ?? value.ja;
+  return value[locale];
 }
 
-export function alternateLocale(locale: Locale): Locale {
-  return locale === "ja" ? "en" : "ja";
-}
+export const localeLabels: Record<Locale, string> = {
+  ja: "日本語",
+  en: "English",
+  la: "Latina",
+};
 
 export function getAlternatePath(page: PageKey, locale: Locale) {
-  return pages[page].path[alternateLocale(locale)];
+  return pages[page].path[locale];
 }
 
 export function getCanonicalUrl(path: string) {

@@ -1,0 +1,25 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import ResearchList from "@/components/ResearchList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/config/site";
+import { byOrder, getDataCollection } from "@/utils/content";
+
+const locale = "la";
+const page = pages.research;
+const research = byOrder(await getDataCollection("research"));
+---
+
+<BaseLayout
+  locale={locale}
+  page="research"
+  title={page.title.la}
+  description={page.description.la}
+>
+  <PageHero title={page.title.la} description={page.description.la} />
+  <section class="section">
+    <div class="container">
+      <ResearchList items={research} locale={locale} />
+    </div>
+  </section>
+</BaseLayout>

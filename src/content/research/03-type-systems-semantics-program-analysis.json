@@ -2,11 +2,13 @@
   "id": "type-systems-semantics-program-analysis",
   "title": {
     "ja": "型システム、意味論、プログラム解析",
-    "en": "Type Systems, Semantics, and Program Analysis"
+    "en": "Type Systems, Semantics, and Program Analysis",
+    "la": "Systemata typorum, semantica et analysis programmatum"
   },
   "body": {
     "ja": "プログラムが期待どおりに動くことを、実行前に数学的に確かめる研究です。型システムは、単なるデータ型の検査だけでなく、関数の利用方法、制御の流れ、実行時に満たすべき条件まで表現できます。本研究では、多相型、線形型、漸進的型付け、詳細化型、効果システムなどを用いて、プログラムの安全性や性質を静的に保証する方法を検討しています。また、大ステップ意味論と小ステップ意味論、抽象機械、プログラム変換の関係を明らかにし、理論と実装を結び付けています。",
-    "en": "This research aims to verify mathematically, before execution, that programs behave as intended. Type systems can express not only ordinary data types, but also how functions may be used, how control flows, and which conditions must hold at run time. The work investigates polymorphic types, linear types, gradual typing, refinement types, and effect systems as methods for statically guaranteeing program safety and other properties. It also studies the relationships among big-step semantics, small-step semantics, abstract machines, and program transformations, connecting theoretical models with practical implementations."
+    "en": "This research aims to verify mathematically, before execution, that programs behave as intended. Type systems can express not only ordinary data types, but also how functions may be used, how control flows, and which conditions must hold at run time. The work investigates polymorphic types, linear types, gradual typing, refinement types, and effect systems as methods for statically guaranteeing program safety and other properties. It also studies the relationships among big-step semantics, small-step semantics, abstract machines, and program transformations, connecting theoretical models with practical implementations.",
+    "la": "Haec investigatio ante exsecutionem mathematice comprobare studet programmata sic se gerere ut exspectatur. Systemata typorum non solum genera datorum ordinaria exprimere possunt, sed etiam quomodo functiones adhibeantur, quomodo controlis fluxus procedat, et quae condiciones tempore exsecutionis valeant. Opus typos polymorphicos, typos lineares, typificationem gradualem, typos refinementis et systemata effectuum investigat ut modos ad salutem programmatum aliasque proprietates statice praestandas. Etiam relationes inter semanticam magni gradus, semanticam parvi gradus, machinas abstractas et transformationes programmatum studet, exempla theoretica cum implementationibus practicis coniungens."
   },
   "representativePublicationIds": [
     "Ishii2020StaticCode",
