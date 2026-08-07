@@ -29,6 +29,30 @@
       img {
         height: auto;
       }
+
+      .supporter-logos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .supporter-logo {
+        display: block;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .supporter-logo-dlsl {
+        max-width: 100%;
+        max-height: 80px;
+      }
+
+      .supporter-logo-cist {
+        max-width: min(300px, 100%);
+        max-height: 110px;
+      }
     </style>
   </head>
   <body>
@@ -354,18 +378,18 @@
             WCTP 2026 is supported by De La Salle Lipa and Chitose Institute of
             Science and Technology.
           </p>
-          <img
-            class="date_line"
-            src="images/DeLaSalleLIPA.png"
-            height="110"
-            alt="De La Salle Lipa logo"
-          />
-          <img
-            class="date_line"
-            src="images/CIST.png"
-            width="300"
-            alt="Chitose Institute of Science and Technology logo"
-          />
+          <div class="supporter-logos">
+            <img
+              class="supporter-logo supporter-logo-dlsl"
+              src="images/DeLaSalleLIPA.png"
+              alt="De La Salle Lipa logo"
+            />
+            <img
+              class="supporter-logo supporter-logo-cist"
+              src="images/CIST.png"
+              alt="Chitose Institute of Science and Technology logo"
+            />
+          </div>
         </div>
       </section>
       <!-- Copyrights Section -->
