@@ -2,3 +2,17 @@
 
 # Preserve whitespace in archived WCTP source files.
 public/wctp/wctp2026/** -whitespace
+
+# Preserve imported WCTP files exactly as provided.
+public/wctp/wctp2013/** -text -whitespace
+public/wctp/wctp2014/** -text -whitespace
+public/wctp/wctp2015/** -text -whitespace
+public/wctp/wctp2016/** -text -whitespace
+public/wctp/wctp2017/** -text -whitespace
+public/wctp/wctp2018/** -text -whitespace
+public/wctp/wctp2019/** -text -whitespace
+public/wctp/wctp2020/** -text -whitespace
+public/wctp/wctp2021/** -text -whitespace
+public/wctp/wctp2023/** -text -whitespace
+public/wctp/wctp2024/** -text -whitespace
+public/wctp/wctp2025/** -text -whitespace

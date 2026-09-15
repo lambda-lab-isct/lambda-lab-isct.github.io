@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WCTP2023</title>
+<link href="WCTP2023_files/singlePageTemplate.css?v=8" rel="stylesheet" type="text/css">
+<script>var __adobewebfontsappname__="dreamweaver"</script>
+<script src="WCTP2023_files/source-sans-pro%20n2%20default.js" type="text/javascript"></script>
+​
+</head>
+<body>
+<!-- Main Container -->
+<div class="container"> 
+  <!-- Navigation -->
+  <header><h4 class="logo"> <a href="">
+	WCTP
+    </a></h4>
+    <nav>
+      <ul>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#speakers">SPEAKERS</a></li>
+        <li><a href="#program">PROGRAM</a></li>
+        <li><a href="#dates">DATES</a></li>
+        <li><a href="#cfp">TOPICS</a></li>
+        <li><a href="#submission">SUBMISSION</a></li>
+        <li><a href="#policy">REVIEW POLICY</a></li>
+	<li><a href="#registration">REGISTRATION</a></li>
+    	<li><a href="#venue">VENUE</a></li>
+        <li><a href="#organization">ORGANIZATION</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+​
+  <section class="hero" id="hero">
+    <h2 class="hero_header">WCTP<span class="light">2023</span></h2>
+    <p class="tagline">Workshop on Computation: Theory and Practice<br/>
+    December 4th — 6th, 2023<br/>
+    Chitose Arcadia Plaza, Chitose-city, Hokkaido, Japan</p>
+  </section>
+​
+  <section class="about" id="about">
+    <h2 class="hidden">About</h2>
+    <p class="text_column">Computation should be a good blend of theory and practice. Researchers in the field should create algorithms to address real world problems putting equal weight to analysis and implementation. Experimentation and simulation can be viewed as yielding to refined theories or improved applications.
+    </p>
+    <p class="text_column">WCTP 2023 is the twelveth workshop organized by the Tokyo Institute of Technology, The Institute of Scientific and Industrial Research-Osaka University, Chitose Institute of Science and Technology, University of the Philippines-Diliman and De La Salle University-Manila that is devoted to theoretical and practical approaches to computation. It aims to present the latest developments by theoreticians and practitioners in academe and industry working to address computational problems that can directly impact the way we live in society.</p>
+    <p class="text_column">WCTP 2023 will feature work-in-progress presentations of prominent researchers selected by members of its Program Committee who come from highly distinguished institutions in Japan and the Philippines. The presentation at the workshop will certainly provide high quality comments and discussion that future research can benefit from.</p>
+    
+    <p class="text_column">WCTP 2023 is supported by Chitose Institute of Science and Technology, and Photonics World Consortium.</p>
+​
+  </section>
+​
+  <section id="speakers">
+    <h2 class="speakers_header"> Invited Speakers </h2>
+    <dl class="speakers_line">
+      <dt>Prof. Katsuyoshi Iida, Hokkaido University, Japan.</dt>
+      <dd>
+	He received the B.E., M.E., and Ph.D. degrees in Computer Science and Systems Engineering from Kyushu Institute of Technology (KIT), Iizuka, Japan in 1996, in Information Science from Nara Institute of Science and Technology, Ikoma, Japan in 1998, and in Computer Science and Systems Engineering from KIT in 2001, respectively. Currently, he is a Professor at the Information Initiative Center, Hokkaido University, Sapporo, Japan. His research interests include network systems engineering such as network architecture, QoS, and cyber-security. He is a member of IEEE and a senior member of IEICE. He received the 18th TELECOM System Technology Award, and Tokyo Tech young researcher's Award in 2003, and 2010, respectively.
+      </dd>
+      <dt> (Tentative title) Knowledge and AI driven network architecture </dt>
+    </dl>
+  </section>
+
+  <section id="program">
+    <h2 class="dates_header"> Program </h2>
+    <p class="dates_line">
+      The program will be published after the accepted papers have been confirmed.
+    </p>
+  </section>
+​
+  <section id="dates">
+    <h2 class="dates_header"> Important Dates</h2>
+    <dl class="dates_line">
+      <dt>Submission Deadline:</dt><dd>August 1, 2023</dd>
+      <dt>Acceptance Notification:</dt><dd>September 15, 2023</dd>
+      <dt>Cameraready Deadline:</dt><dd>The deadline for camera-ready submissions is to be announced.</dd>
+      <dt>Conference Date:</dt><dd>December, 4-6, 2023</dd>
+    </dl>
+  </section>
+  
+  <section id="cfp">
+    <h2 class="dates_header">Topics</h2>
+    <div class="dates_line">
+      <p>The WCTP 2023 program will consist of invited talks by prominent 
+	researchers and contributed talks from submitted papers selected by the 
+	Program Committee. All sessions will be devoted to original research. 
+	Major topics of the workshop include, but are not limited to, the 
+	followings:</p>
+      <dl class="cfp">
+	<dt>Theory of Computation:</dt>
+	<dd>Model of computation, Logic, Design and analysis of algorithms, etc.</dd>
+      </dl>
+      <dl class="cfp">
+	<dt>Software and its engineering</dt>
+	<dd>Software organization and properties, Software creation and management, etc.</dd>
+      </dl>
+      <dl class="cfp">
+	<dt>Security and Privacy</dt>
+	<dd>Formal methods and theory of security, Security services, Software and application security, Human and societal aspects of security and privacy, etc.</dd>
+      </dl>
+      <dl class="cfp">
+	<dt>Human-centered computing</dt>
+	<dd>Human computer interaction(HCI), Interaction design, Collaborative and social computing, Ubiquitous and mobile computing, etc<dd> 
+      </dl>
+      <dl class="cfp">
+	<dt>Computing methodologies</dt>
+	<dd>Symbolic and algebraic manipulation, Artificial intelligence, Machine learning, Concurent computing methodologies, etc.</dd>
+      </dl>
+      <dl class="cfp">
+	<dt>Applied computing</dt>
+	<dd>Enterprise computing, Life and medical sciences, Education, Computers in other domains, etc.</dd>
+      </dl>
+    </div>
+  </section>
+  
+  <section id="submission">
+    <h2 class="dates_header">Submission</h2>
+    <div class="dates_line">
+      <p>
+	Submissions related to the topics of the workshop are very much welcome.
+	Submissions that relate results from other areas to the workshop topics
+	are also encouraged. Submitted papers should preferably be typeset in 
+	LaTeX2e using the style file. We recommend the usual page limits of 
+	around 15 pages.
+      </p>
+      <p>
+	Any submission should include the session name, the title of the paper, 
+	names and affiliations of authors, an abstract of 70-150 words, and the 
+	contact author's name, phone number, fax number, and email address.
+	The session names are as follows:</p>
+      <ul>
+	<li>Theoretical Approaches to Computations,</li>
+	<li>Practical Approaches to Computation,</li>
+	<li>Computation for Community-based Applications.</li>
+      </ul>
+      <p>Submissions must be in English. The paper must be unpublished and not 
+	submitted for publication elsewhere, including journals and proceedings 
+	of other symposia or workshops. One author of each accepted paper should
+	be able to present it at the workshop.
+	All submissions should be in PDF file format and uploaded via the 
+	Easychair Conference System.
+      </p>
+      <p>
+	LaTeX style files and Microsoft Word's template files are available from the following links, which the authors must use.
+      </p>
+      <ul>
+	<li><a href="./stylefiles/LaTex_Package.zip">LaTeX style files</a></li>
+	<li><a href="./stylefiles/Word_Template.zip">Word's template files</a></li>
+      </ul>
+      <p>Submission Page in EasyChair: <a href="https://easychair.org/conferences/?conf=wctp2023"> https://easychair.org/conferences/?conf=wctp2023</a></p>
+      <p>We are currently in discussions with Atlantis Press regarding the publication of the accepted full-papers.</p>
+    </div>
+  </section>
+
+    <section id="policy">
+    <h2 class="dates_header"> Peer-Review Policy</h2>
+    <div class="dates_line">
+    <p>
+      WCTP2023 is committed to ensuring the highest level of academic integrity, which includes a thorough and rigorous peer-review process.</p>
+    <ol>
+      <li> Submission: All submitted papers will be checked for relevance to the conference themes and scope. The submission should not have been previously published or under review elsewhere.</li>
+      <li> Initial Screening: Each submission will undergo an initial screening for formatting, language quality, and adherence to submission guidelines.</li>
+      <li> Double-Blind Review: Submissions passing the initial screening will then go through a double-blind peer-review process. This means the identities of the authors and reviewers are not disclosed to each other. The submissions are evaluated based on originality, technical soundness, clarity of presentation, relevance to conference themes, and potential impact in both theoretical and practical aspects of computer science.</li>
+      <li>Reviewer Assignment: Each submission is typically reviewed by at least two expert reviewers within the field. The review panel is selected based on their expertise, and any potential conflicts of interest are considered and managed. </li>
+      <li>Revision and Resubmission: Based on the reviews, papers may be accepted, rejected, or returned to the authors with requests for revision and resubmission. Authors must address the reviewers' comments systematically in their revision and provide a detailed response to the reviewers' comments.</li>
+      <li>Final Decision: The final decision regarding acceptance of a paper is made by the Program Committee, considering the reviewers' feedback and the paper's contribution to the conference's diversity and balance.</li>
+    </ol>
+    <p>
+      Our peer-review process is designed to ensure that all accepted papers meet high standards of quality, originality, and relevance to the conference themes. By submitting a paper to WCTP2023, authors agree to undergo this process.
+    </p>
+    </div>
+  </section>
+​
+  <section id="registration">
+    <h2 class="dates_header">Registration</h2>
+    <p class="dates_line">
+      Information on the registration deadline will be announced at a later date. The registration fees are as follows.</p>
+    <dl class="dates_line">
+      <dt>Participants:</dt><dd>10,000JPY</dd>
+      <dt>Publication Fee:</dt><dd>30,000JPY</dd>
+    </dl>
+  </section>
+​
+  <section id="venue">
+    <h2 class="dates_header">Venue</h2>
+    <div class="dates_line">
+      <p>Conference room at Chitose Arcadia Plaza.</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2927.0023210883987!2d141.6749609!3d42.809436999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f752083bf49660f%3A0x9051bac78013845a!2z5Y2D5q2z44Ki44Or44Kr44OH44Kj44Ki772l44OX44Op44K2!5e0!3m2!1sen!2sjp!4v1684372106002!5m2!1sen!2sjp" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>Chitose Arcadia Plaza is the building located right in front of the north exit of Minami-Chitose Station. Minami-Chitose Station is situated between Chitose Station and New Chitose Airport Station, and is approximately a 3-minute ride from both of these stations.</p>
+    </div>
+  </section>
+​
+  <section id="organization">
+    <h2 class="dates_header">Organization</h2>
+    <div class="dates_line">
+      <h3>Program Co-Chairs</h3>
+      <ul>
+	<li>Jaime Caro (University of the Philippines - Diliman)</li>
+	<li>Merlin Suarez (De La Salle Univeristy)</li>
+	<li>Masayuki Numao (Osaka University)</li>
+	<li>Shin-ya Nishizaki (Tokyo Insitute of Technology)</li>
+	<li>Shigeki Hagihara (Chitose Institute of Science and Technology)</li>
+      </ul>
+
+      <h3>Program Committee</h3>
+      <ul>
+	<li>Jaime Caro (University of the Philippines - Diliman)</li>
+	<li>Henry Adorna (University of the Philippines - Diliman)</li>
+	<li>Francis Cabarle (University of the Philippines - Diliman)</li>
+	<li>Aurelio Vilbar (University of the Philippines - Cebu)</li>
+	<li>Hazel Trapero (University of the Philippines - Cebu)</li>
+	<li>Merlin Suarez (De La Salle Univeristy)</li>
+	<li>Rafael Cabredo (De La Salle Univeristy)</li>
+	<li>Judith Azcarraga (De La Salle Univeristy)</li>
+	<li>Ryan Ebardo (De La Salle University)</li>
+	<li>Raymund Sison (De La Salle Univeristy)</li>
+	<li>Laiza Limpin (Mindanao State University - General Santos City)</li>
+	<li>Jypzie Catedrilla (Mindanao State University - General Santos City)</li>
+	<li>Shin-ya Nishizaki (Tokyo Institute of Technology)</li>
+	<li>Takuo Watanabe (Tokyo Institute of Technology)</li>
+	<li>Naoyuki Nagatou (Tokyo Institute of Technology)</li>
+	<li>Masayuki Numao (Osaka University)</li>
+	<li>Ken-ichi Fukui (Osaka University)</li>
+	<li>Koichi Moriyama (Nagoya Institute of Technology)</li>
+	<li>Kaoru Sumi (Future University Hakodate)</li>
+	<li>Noriaki Yoshiura (Saitama University)</li>
+	<li>Masaya Shimakawa (Takushoku University)</li>
+	<li>Takashi Tomita (Japan Advanced Institute of Science and Technology)</li>
+	<li>Shigeki Hagihara (Chitose Institute of Science and Technology)</li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Copyrights Section -->
+  <div class="copyright">©2023 - <strong>WCTP Program Committee</strong></div>
+</div>
+<!-- Main Container Ends -->
+​
+</body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WCTP2023</title>
+<link href="WCTP2023_files/singlePageTemplate.css?v=8" rel="stylesheet" type="text/css">
+<script>var __adobewebfontsappname__="dreamweaver"</script>
+<script src="WCTP2023_files/source-sans-pro%20n2%20default.js" type="text/javascript"></script>
+​
+</head>
+<body>
+<!-- Main Container -->
+<div class="container"> 
+  <!-- Navigation -->
+  <header><h4 class="logo"> <a href="">
+	WCTP
+    </a></h4>
+    <nav>
+      <ul>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#speakers">SPEAKERS</a></li>
+        <li><a href="#program">PROGRAM</a></li>
+        <li><a href="#dates">DATES</a></li>
+        <li><a href="#cfp">TOPICS</a></li>
+        <li><a href="#submission">SUBMISSION</a></li>
+        <li><a href="#policy">REVIEW POLICY</a></li>
+	<li><a href="#registration">REGISTRATION</a></li>
+    	<li><a href="#venue">VENUE</a></li>
+        <li><a href="#organization">ORGANIZATION</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+​
+  <section class="hero" id="hero">
+    <h2 class="hero_header">WCTP<span class="light">2023</span></h2>
+    <p class="tagline">Workshop on Computation: Theory and Practice<br/>
+    December 4th — 6th, 2023<br/>
+    Chitose Arcadia Plaza, Chitose-city, Hokkaido, Japan</p>
+  </section>
+​
+  <section class="about" id="about">
+    <h2 class="hidden">About</h2>
+    <p class="text_column">Computation should be a good blend of theory and practice. Researchers in the field should create algorithms to address real world problems putting equal weight to analysis and implementation. Experimentation and simulation can be viewed as yielding to refined theories or improved applications.
+    </p>
+    <p class="text_column">WCTP 2023 is the twelveth workshop organized by the Tokyo Institute of Technology, The Institute of Scientific and Industrial Research-Osaka University, Chitose Institute of Science and Technology, University of the Philippines-Diliman and De La Salle University-Manila that is devoted to theoretical and practical approaches to computation. It aims to present the latest developments by theoreticians and practitioners in academe and industry working to address computational problems that can directly impact the way we live in society.</p>
+    <p class="text_column">WCTP 2023 will feature work-in-progress presentations of prominent researchers selected by members of its Program Committee who come from highly distinguished institutions in Japan and the Philippines. The presentation at the workshop will certainly provide high quality comments and discussion that future research can benefit from.</p>
+    
+    <p class="text_column">WCTP 2023 is supported by Chitose Institute of Science and Technology, and Photonics World Consortium.</p>
+​
+  </section>
+​
+  <section id="speakers">
+    <h2 class="speakers_header"> Invited Speakers </h2>
+    <dl class="speakers_line">
+      <dt>Prof. Katsuyoshi Iida, Hokkaido University, Japan.</dt>
+      <dd>
+	He received the B.E., M.E., and Ph.D. degrees in Computer Science and Systems Engineering from Kyushu Institute of Technology (KIT), Iizuka, Japan in 1996, in Information Science from Nara Institute of Science and Technology, Ikoma, Japan in 1998, and in Computer Science and Systems Engineering from KIT in 2001, respectively. Currently, he is a Professor at the Information Initiative Center, Hokkaido University, Sapporo, Japan. His research interests include network systems engineering such as network architecture, QoS, and cyber-security. He is a member of IEEE and a senior member of IEICE. He received the 18th TELECOM System Technology Award, and Tokyo Tech young researcher's Award in 2003, and 2010, respectively.
+      </dd>
+      <dt> (Tentative title) Knowledge and AI driven network architecture </dt>
+    </dl>
+  </section>
+
+  <section id="program">
+    <h2 class="dates_header"> Program </h2>
+    <p class="dates_line">
+      The program will be published after the accepted papers have been confirmed.
+    </p>
+  </section>
+​
+  <section id="dates">
+    <h2 class="dates_header"> Important Dates</h2>
+    <dl class="dates_line">
+      <dt>Submission Deadline:</dt><dd>August 1, 2023</dd>
+      <dt>Acceptance Notification:</dt><dd>September 15, 2023</dd>
+      <dt>Cameraready Deadline:</dt><dd>The deadline for camera-ready submissions is to be announced.</dd>
+      <dt>Conference Date:</dt><dd>December, 4-6, 2023</dd>
+    </dl>
+  </section>
+  
+  <section id="cfp">
+    <h2 class="dates_header">Topics</h2>
+    <div class="dates_line">
+      <p>The WCTP 2023 program will consist of invited talks by prominent 
+	researchers and contributed talks from submitted papers selected by the 
+	Program Committee. All sessions will be devoted to original research. 
+	Major topics of the workshop include, but are not limited to, the 
+	followings:</p>
+      <dl class="cfp">
+	<dt>Theory of Computation:</dt>
+	<dd>Model of computation, Logic, Design and analysis of algorithms, etc.</dd>
+      </dl>
+      <dl class="cfp">
+	<dt>Software and its engineering</dt>
+	<dd>Software organization and properties, Software creation and management, etc.</dd>
+      </dl>
+      <dl class="cfp">
+	<dt>Security and Privacy</dt>
+	<dd>Formal methods and theory of security, Security services, Software and application security, Human and societal aspects of security and privacy, etc.</dd>
+      </dl>
+      <dl class="cfp">
+	<dt>Human-centered computing</dt>
+	<dd>Human computer interaction(HCI), Interaction design, Collaborative and social computing, Ubiquitous and mobile computing, etc<dd> 
+      </dl>
+      <dl class="cfp">
+	<dt>Computing methodologies</dt>
+	<dd>Symbolic and algebraic manipulation, Artificial intelligence, Machine learning, Concurent computing methodologies, etc.</dd>
+      </dl>
+      <dl class="cfp">
+	<dt>Applied computing</dt>
+	<dd>Enterprise computing, Life and medical sciences, Education, Computers in other domains, etc.</dd>
+      </dl>
+    </div>
+  </section>
+  
+  <section id="submission">
+    <h2 class="dates_header">Submission</h2>
+    <div class="dates_line">
+      <p>
+	Submissions related to the topics of the workshop are very much welcome.
+	Submissions that relate results from other areas to the workshop topics
+	are also encouraged. Submitted papers should preferably be typeset in 
+	LaTeX2e using the style file. We recommend the usual page limits of 
+	around 15 pages.
+      </p>
+      <p>
+	Any submission should include the session name, the title of the paper, 
+	names and affiliations of authors, an abstract of 70-150 words, and the 
+	contact author's name, phone number, fax number, and email address.
+	The session names are as follows:</p>
+      <ul>
+	<li>Theoretical Approaches to Computations,</li>
+	<li>Practical Approaches to Computation,</li>
+	<li>Computation for Community-based Applications.</li>
+      </ul>
+      <p>Submissions must be in English. The paper must be unpublished and not 
+	submitted for publication elsewhere, including journals and proceedings 
+	of other symposia or workshops. One author of each accepted paper should
+	be able to present it at the workshop.
+	All submissions should be in PDF file format and uploaded via the 
+	Easychair Conference System.
+      </p>
+      <p>
+	LaTeX style files and Microsoft Word's template files are available from the following links, which the authors must use.
+      </p>
+      <ul>
+	<li><a href="./stylefiles/LaTex_Package.zip">LaTeX style files</a></li>
+	<li><a href="./stylefiles/Word_Template.zip">Word's template files</a></li>
+      </ul>
+      <p>Submission Page in EasyChair: <a href="https://easychair.org/conferences/?conf=wctp2023"> https://easychair.org/conferences/?conf=wctp2023</a></p>
+      <p>We are currently in discussions with Atlantis Press regarding the publication of the accepted full-papers.</p>
+    </div>
+  </section>
+
+    <section id="policy">
+    <h2 class="dates_header"> Peer-Review Policy</h2>
+    <div class="dates_line">
+    <p>
+      WCTP2023 is committed to ensuring the highest level of academic integrity, which includes a thorough and rigorous peer-review process.</p>
+    <ol>
+      <li> Submission: All submitted papers will be checked for relevance to the conference themes and scope. The submission should not have been previously published or under review elsewhere.</li>
+      <li> Initial Screening: Each submission will undergo an initial screening for formatting, language quality, and adherence to submission guidelines.</li>
+      <li> Double-Blind Review: Submissions passing the initial screening will then go through a double-blind peer-review process. This means the identities of the authors and reviewers are not disclosed to each other. The submissions are evaluated based on originality, technical soundness, clarity of presentation, relevance to conference themes, and potential impact in both theoretical and practical aspects of computer science.</li>
+      <li>Reviewer Assignment: Each submission is typically reviewed by at least two expert reviewers within the field. The review panel is selected based on their expertise, and any potential conflicts of interest are considered and managed. </li>
+      <li>Revision and Resubmission: Based on the reviews, papers may be accepted, rejected, or returned to the authors with requests for revision and resubmission. Authors must address the reviewers' comments systematically in their revision and provide a detailed response to the reviewers' comments.</li>
+      <li>Final Decision: The final decision regarding acceptance of a paper is made by the Program Committee, considering the reviewers' feedback and the paper's contribution to the conference's diversity and balance.</li>
+    </ol>
+    <p>
+      Our peer-review process is designed to ensure that all accepted papers meet high standards of quality, originality, and relevance to the conference themes. By submitting a paper to WCTP2023, authors agree to undergo this process.
+    </p>
+    </div>
+  </section>
+​
+  <section id="registration">
+    <h2 class="dates_header">Registration</h2>
+    <p class="dates_line">
+      Information on the registration deadline will be announced at a later date. The registration fees are as follows.</p>
+    <dl class="dates_line">
+      <dt>Participants:</dt><dd>10,000JPY</dd>
+      <dt>Publication Fee:</dt><dd>30,000JPY</dd>
+    </dl>
+  </section>
+​
+  <section id="venue">
+    <h2 class="dates_header">Venue</h2>
+    <div class="dates_line">
+      <p>Conference room at Chitose Arcadia Plaza.</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2927.0023210883987!2d141.6749609!3d42.809436999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f752083bf49660f%3A0x9051bac78013845a!2z5Y2D5q2z44Ki44Or44Kr44OH44Kj44Ki772l44OX44Op44K2!5e0!3m2!1sen!2sjp!4v1684372106002!5m2!1sen!2sjp" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>Chitose Arcadia Plaza is the building located right in front of the north exit of Minami-Chitose Station. Minami-Chitose Station is situated between Chitose Station and New Chitose Airport Station, and is approximately a 3-minute ride from both of these stations.</p>
+    </div>
+  </section>
+​
+  <section id="organization">
+    <h2 class="dates_header">Organization</h2>
+    <div class="dates_line">
+      <h3>Program Co-Chairs</h3>
+      <ul>
+	<li>Jaime Caro (University of the Philippines - Diliman)</li>
+	<li>Merlin Suarez (De La Salle Univeristy)</li>
+	<li>Masayuki Numao (Osaka University)</li>
+	<li>Shin-ya Nishizaki (Tokyo Insitute of Technology)</li>
+	<li>Shigeki Hagihara (Chitose Institute of Science and Technology)</li>
+      </ul>
+
+      <h3>Program Committee</h3>
+      <ul>
+	<li>Jaime Caro (University of the Philippines - Diliman)</li>
+	<li>Henry Adorna (University of the Philippines - Diliman)</li>
+	<li>Francis Cabarle (University of the Philippines - Diliman)</li>
+	<li>Aurelio Vilbar (University of the Philippines - Cebu)</li>
+	<li>Hazel Trapero (University of the Philippines - Cebu)</li>
+	<li>Merlin Suarez (De La Salle Univeristy)</li>
+	<li>Rafael Cabredo (De La Salle Univeristy)</li>
+	<li>Judith Azcarraga (De La Salle Univeristy)</li>
+	<li>Ryan Ebardo (De La Salle University)</li>
+	<li>Raymund Sison (De La Salle Univeristy)</li>
+	<li>Laiza Limpin (Mindanao State University - General Santos City)</li>
+	<li>Jypzie Catedrilla (Mindanao State University - General Santos City)</li>
+	<li>Shin-ya Nishizaki (Tokyo Institute of Technology)</li>
+	<li>Takuo Watanabe (Tokyo Institute of Technology)</li>
+	<li>Naoyuki Nagatou (Tokyo Institute of Technology)</li>
+	<li>Masayuki Numao (Osaka University)</li>
+	<li>Ken-ichi Fukui (Osaka University)</li>
+	<li>Koichi Moriyama (Nagoya Institute of Technology)</li>
+	<li>Kaoru Sumi (Future University Hakodate)</li>
+	<li>Noriaki Yoshiura (Saitama University)</li>
+	<li>Masaya Shimakawa (Takushoku University)</li>
+	<li>Takashi Tomita (Japan Advanced Institute of Science and Technology)</li>
+	<li>Shigeki Hagihara (Chitose Institute of Science and Technology)</li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Copyrights Section -->
+  <div class="copyright">©2023 - <strong>WCTP Program Committee</strong></div>
+</div>
+<!-- Main Container Ends -->
+​
+</body></html>
