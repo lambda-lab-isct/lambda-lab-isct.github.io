@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META NAME="robots" CONTENT="noindex,nofollow">
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>WCTP2014</title>
+<!-- TemplateEndEditable -->
+<link href="../wctp2014.css" rel="stylesheet" type="text/css" />
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+
+
+<body>
+<div class="container">
+<div class="header">
+    <div style="padding-left:10px"><img src="../cebu-banner.jpg" alt=""/>
+    <p><strong>WCTP 2014 &#8212; Workshop on Computation: Theory and Practice&#8212;</strong> <br />
+      October 6 &#8212; 7, 2014, De La Salle University - Manila, the Philippines<br />
+      Satellite Workshop: October 3, 2014, University of the Philippines Cebu</p>
+    </div>
+    
+    <div class="menu" id="menu">
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../cfp.html">CFP</a></li>
+        <li><a href="../organization.html">Organization</a></li>
+            <li><a href="./invited-speakers.html">Invited Speakers</a></li>
+       <li><a href="../program.html">Program&amp;Venue</a></li>
+        <li><a href="../registration.html">Registration</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <div style="clear:left"></div>
+      </ul>
+    </div>
+  </div>
+  </div>
+<!-- TemplateBeginEditable name="EditRegion-wctp2014" -->EditRegion-wctp2014<!-- TemplateEndEditable -->
+</body>
+</html>
