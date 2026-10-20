@@ -1,77 +1,204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Team Introductions - ICPC 2026 Asia Yokohama Regional</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<style>
-  :root { --blue:#4a7cc4; --ink:#1f2937; --muted:#555; --line:#e5e7eb; }
-  * { box-sizing: border-box; }
-  body { margin:0; font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-         color:var(--ink); background:#f7f8fa; line-height:1.6; }
-  header { background:#fff; border-bottom:1px solid var(--line); }
-  header .wrap { max-width:960px; margin:0 auto; padding:12px 20px; }
-  header img { display:block; width:100%; max-width:700px; height:auto; }
-  main { max-width:960px; margin:0 auto; padding:24px 20px 48px; }
-  h1 { font-size:1.7rem; margin:.2em 0 .3em; }
-  .lead { color:var(--muted); margin-top:0; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; margin-top:24px; }
-  .card { background:#fff; border:1px solid var(--line); border-radius:10px; padding:20px 22px;
-          display:flex; flex-direction:column; }
-  .card h2 { font-size:1.25rem; margin:0 0 .2em; color:var(--blue); }
-  .deadline { font-weight:bold; margin:.2em 0 .8em; }
-  .card ul { padding-left:1.2em; margin:0 0 1em; }
-  .card li { margin:.25em 0; }
-  .btn { margin-top:auto; display:inline-block; text-align:center; background:var(--blue); color:#fff;
-         text-decoration:none; font-weight:bold; padding:12px 18px; border-radius:8px; }
-  .btn:hover { background:#3a66a8; }
-  .note { background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 20px; margin-top:24px; }
-  code { font-family: Consolas, "Courier New", monospace; background:#f0f2f5; padding:0 .25em; border-radius:3px; }
-  footer { text-align:center; color:#888; font-size:.85rem; padding:16px; }
-</style>
-</head>
-<body>
-<header><div class="wrap">
-  <img src="banner.png" alt="ICPC International Collegiate Programming Contest - The 2026-2027 ICPC Asia Pacific Contests">
-</div></header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team Introductions - ICPC 2026 Asia Yokohama Regional</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <style>
+      :root {
+        --blue: #4a7cc4;
+        --ink: #1f2937;
+        --muted: #555;
+        --line: #e5e7eb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: var(--ink);
+        background: #f7f8fa;
+        line-height: 1.6;
+      }
+      header {
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+      }
+      header .wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 12px 20px;
+      }
+      header img {
+        display: block;
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px 20px 48px;
+      }
+      h1 {
+        font-size: 1.7rem;
+        margin: 0.2em 0 0.3em;
+      }
+      .lead {
+        color: var(--muted);
+        margin-top: 0;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 24px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 20px 22px;
+        display: flex;
+        flex-direction: column;
+      }
+      .card h2 {
+        font-size: 1.25rem;
+        margin: 0 0 0.2em;
+        color: var(--blue);
+      }
+      .deadline {
+        font-weight: bold;
+        margin: 0.2em 0 0.8em;
+      }
+      .card ul {
+        padding-left: 1.2em;
+        margin: 0 0 1em;
+      }
+      .card li {
+        margin: 0.25em 0;
+      }
+      .btn {
+        margin-top: auto;
+        display: inline-block;
+        text-align: center;
+        background: var(--blue);
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 12px 18px;
+        border-radius: 8px;
+      }
+      .btn:hover {
+        background: #3a66a8;
+      }
+      .note {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 14px 20px;
+        margin-top: 24px;
+      }
+      code {
+        font-family: Consolas, "Courier New", monospace;
+        background: #f0f2f5;
+        padding: 0 0.25em;
+        border-radius: 3px;
+      }
+      footer {
+        text-align: center;
+        color: #888;
+        font-size: 0.85rem;
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <img
+          src="banner.png"
+          alt="ICPC International Collegiate Programming Contest - The 2026-2027 ICPC Asia Pacific Contests"
+        />
+      </div>
+    </header>
 
-<main>
-  <h1>Team Introductions &mdash; ICPC 2026 Asia Yokohama Regional</h1>
-  <p class="lead">Each team is asked to submit two items: a <strong>Team Introduction Document</strong> (plain text) and a <strong>Team Introduction Slide</strong>. Please read the notes below and use the links to submit.</p>
+    <main>
+      <h1>Team Introductions &mdash; ICPC 2026 Asia Yokohama Regional</h1>
+      <p class="lead">
+        Each team is asked to submit two items: a
+        <strong>Team Introduction Document</strong> (plain text) and a
+        <strong>Team Introduction Slide</strong>. Please read the notes below
+        and use the links to submit.
+      </p>
 
-  <div class="cards">
-    <section class="card">
-      <h2>Team Introduction Document</h2>
-      <p class="deadline">Deadline: Tuesday, November 3, 2026, 17:00 JST (UTC+9)</p>
-      <ul>
-        <li>At most <strong>35 lines</strong>, each at most <strong>75 characters</strong>.</li>
-        <li>Printable ASCII characters only (SPACE, letters, digits, and symbols). No Japanese, Chinese, or emoji. A TAB is expanded to SPACEs.</li>
-        <li>If needed, explain how to pronounce your team name.</li>
-        <li>You are encouraged to mention your university, city, and team members.</li>
-        <li>The text is typeset verbatim in a monospace font, so ASCII art may not appear as intended.</li>
-        <li>The submission page checks your text and suggests a corrected version if it does not meet the rules.</li>
-      </ul>
-      <a class="btn" href="https://script.google.com/macros/s/AKfycbyNOTC0PtKqf4lGRqwmnDZ2r_jljBzGyVbgxICg-7M2JVo0ov2peCoOS_Q1GLdBb0fHoA/exec">Submit Team Introduction Document</a>
-    </section>
+      <div class="cards">
+        <section class="card">
+          <h2>Team Introduction Document</h2>
+          <p class="deadline">
+            Deadline: Tuesday, November 3, 2026, 17:00 JST (UTC+9)
+          </p>
+          <ul>
+            <li>
+              At most <strong>35 lines</strong>, each at most
+              <strong>75 characters</strong>.
+            </li>
+            <li>
+              Printable ASCII characters only (SPACE, letters, digits, and
+              symbols). No Japanese, Chinese, or emoji. A TAB is expanded to
+              SPACEs.
+            </li>
+            <li>If needed, explain how to pronounce your team name.</li>
+            <li>
+              You are encouraged to mention your university, city, and team
+              members.
+            </li>
+            <li>
+              The text is typeset verbatim in a monospace font, so ASCII art may
+              not appear as intended.
+            </li>
+            <li>
+              The submission page checks your text and suggests a corrected
+              version if it does not meet the rules.
+            </li>
+          </ul>
+          <a
+            class="btn"
+            href="https://script.google.com/macros/s/AKfycbyNOTC0PtKqf4lGRqwmnDZ2r_jljBzGyVbgxICg-7M2JVo0ov2peCoOS_Q1GLdBb0fHoA/exec"
+            >Submit Team Introduction Document</a
+          >
+        </section>
 
-    <section class="card">
-      <h2>Team Introduction Slide</h2>
-      <p class="deadline">Deadline: Tuesday, November 10, 2026</p>
-      <ul>
-        <li>Submit your slide through the Google Form below.</li>
-        <li>The first field of the form may be labeled in Japanese; it asks for your email address.</li>
-        <li>If you have any trouble with the form, you may send your slide to us by email instead.</li>
-      </ul>
-      <a class="btn" href="https://forms.gle/HatSzKLco5JJFLbX6">Submit Team Introduction Slide</a>
-    </section>
-  </div>
+        <section class="card">
+          <h2>Team Introduction Slide</h2>
+          <p class="deadline">Deadline: Tuesday, November 10, 2026</p>
+          <ul>
+            <li>Submit your slide through the Google Form below.</li>
+            <li>
+              The first field of the form may be labeled in Japanese; it asks
+              for your email address.
+            </li>
+            <li>
+              If you have any trouble with the form, you may send your slide to
+              us by email instead.
+            </li>
+          </ul>
+          <a class="btn" href="https://forms.gle/HatSzKLco5JJFLbX6"
+            >Submit Team Introduction Slide</a
+          >
+        </section>
+      </div>
 
-  <div class="note">
-    <strong>Team names:</strong> We strongly recommend that your team name consist of ASCII characters only. Otherwise, for technical reasons, the Yokohama Regional Director may ask you to change your team name.
-  </div>
-</main>
+      <div class="note">
+        <strong>Team names:</strong> We strongly recommend that your team name
+        consist of ASCII characters only. Otherwise, for technical reasons, the
+        Yokohama Regional Director may ask you to change your team name.
+      </div>
+    </main>
 
-<footer>ICPC 2026 Asia Yokohama Regional</footer>
-</body>
+    <footer>ICPC 2026 Asia Yokohama Regional</footer>
+  </body>
 </html>
