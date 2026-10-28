@@ -53,6 +53,25 @@
         max-width: min(300px, 100%);
         max-height: 110px;
       }
+
+      /* Styles for Registration section */
+      .fee-table {
+        width: 100%;
+        max-width: 600px;
+        border-collapse: collapse;
+        margin: 10px 0 20px 0;
+      }
+
+      .fee-table th,
+      .fee-table td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: left;
+      }
+
+      .fee-table th {
+        background-color: #f5f5f5;
+      }
     </style>
   </head>
   <body>
@@ -333,9 +352,81 @@
 
       <section id="registration">
         <h2 class="dates_header">Registration</h2>
-        <p class="dates_line">
-          The registration page is currently under preparation.
-        </p>
+        <div class="dates_line">
+          <p>The registration fee is as follows:</p>
+
+          <h3>Workshop Fee</h3>
+          <table class="fee-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Teacher / Professional / Researcher (2 days)</td>
+                <td>PHP 2,500 / JPY 6,000</td>
+              </tr>
+              <tr>
+                <td>Student (2 days)</td>
+                <td>PHP 1,200 / JPY 3,000</td>
+              </tr>
+              <tr>
+                <td>Student (1 day)</td>
+                <td>PHP 800 / JPY 2,000</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Tutorial Fee</h3>
+          <table class="fee-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Teacher / Professional / Researcher</td>
+                <td>PHP 1,000 / JPY 2,500</td>
+              </tr>
+              <tr>
+                <td>Student</td>
+                <td>PHP 600 / JPY 1,500</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Presentation Fee</h3>
+          <p>If you will do regular presentation, the following fees will be charged for each presentation:</p>
+          <ul>
+            <li><strong>Regular paper:</strong> 10,000 PHP or 25,000 JPY (One of the authors must pay this cost.)</li>
+            <li><strong>WIP paper, Poster:</strong> no charge</li>
+          </ul>
+
+          <h3>Registration Forms</h3>
+          <p><strong>For participants from Philippines and other areas:</strong></p>
+          <ul>
+            <li>
+              Regular paper author:
+              <a href="https://forms.gle/NWvuBkHBbEfD9nMg9" target="_blank" rel="noopener noreferrer">https://forms.gle/NWvuBkHBbEfD9nMg9</a>
+            </li>
+            <li>
+              Participants:
+              <a href="https://docs.google.com/forms/d/13E5r4lV9dMlSo_NPm-kf4apQelfjcxNFaxxsG1lw-X8/edit" target="_blank" rel="noopener noreferrer">https://docs.google.com/forms/d/13E5r4lV9dMlSo_NPm-kf4apQelfjcxNFaxxsG1lw-X8/edit</a>
+            </li>
+          </ul>
+
+          <p><strong>For participants from Japan:</strong></p>
+          <ul>
+            <li>
+              Registration Page:
+              <a href="https://forms.gle/wRUQmhLWZeCV2BAf9" target="_blank" rel="noopener noreferrer">https://forms.gle/wRUQmhLWZeCV2BAf9</a>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section id="venue">
